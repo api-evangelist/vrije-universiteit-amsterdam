@@ -1,0 +1,99 @@
+---
+aid: vrije-universiteit-amsterdam
+name: Vrije Universiteit Amsterdam
+description: >-
+  Vrije Universiteit Amsterdam (VU Amsterdam) is a public research university in
+  the Netherlands, ranked #221 in the QS World University Rankings 2025. Like
+  most universities, VU Amsterdam does not operate a centralized public developer
+  portal. Its programmatic footprint is concentrated in research-infrastructure
+  systems: the VU Research Portal (research.vu.nl), an Elsevier Pure instance that
+  exposes a live OAI-PMH harvesting endpoint and a Pure REST web service, and
+  research data published through DataverseNL. The University Library maintains an
+  active public GitHub organization (ubvu) of open-science tooling. Most teaching,
+  student-information, and identity systems are internal and not publicly
+  documented.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/vrije-universiteit-amsterdam/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Netherlands
+  - Research
+  - Open Data
+  - Repository
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: vrije-universiteit-amsterdam:research-portal-oai
+    name: VU Research Portal OAI-PMH
+    description: >-
+      OAI-PMH 2.0 metadata harvesting endpoint for the Vrije Universiteit
+      Amsterdam Repository, served by the institution's Elsevier Pure research
+      information system at research.vu.nl. Confirmed live: an Identify request
+      returns the repository name "Vrije Universiteit Amsterdam Repository" with
+      admin contact pure.ub@vu.nl. Supports standard OAI-PMH verbs (Identify,
+      ListMetadataFormats, ListRecords, etc.) for harvesting publications,
+      persons, organizations, and projects.
+    humanURL: https://research.vu.nl/
+    baseURL: https://research.vu.nl/ws/oai
+    tags: [ Research, Repository, OAI-PMH, Metadata, Open Data, Harvesting ]
+    properties:
+      - type: Documentation
+        url: https://helpcenter.pure.elsevier.com/en_US/data-sources-and-integrations/what-is-the-oai-base-url
+  - aid: vrije-universiteit-amsterdam:pure-web-service
+    name: VU Research Portal Pure Web Service (REST)
+    description: >-
+      The Elsevier Pure REST web service for the VU Research Portal. The base
+      path (research.vu.nl/ws/api) responds (HTTP 302 redirect), indicating the
+      service is present but gated/authenticated. Pure exposes content types such
+      as research-outputs, persons, organisations, and projects via versioned
+      endpoints (for example /ws/api/524/research-outputs). Access typically
+      requires an API key issued by the institution; not a fully open public API.
+    humanURL: https://research.vu.nl/
+    tags: [ Research, Repository, REST, Pure, Metadata ]
+    properties:
+      - type: Documentation
+        url: https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
+      - type: Authentication
+        url: https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
+  - aid: vrije-universiteit-amsterdam:dataverse-nl
+    name: VU Amsterdam research data on DataverseNL
+    description: >-
+      Vrije Universiteit Amsterdam publishes and shares research datasets through
+      DataverseNL, the national Dataverse repository service. The Dataverse
+      software exposes a documented Native and Search REST API for programmatic
+      access to dataverses, datasets, and files. VU's collection is hosted at
+      dataverse.nl/dataverse/vuamsterdam (HTTP 200 confirmed).
+    humanURL: https://dataverse.nl/dataverse/vuamsterdam
+    baseURL: https://dataverse.nl/api
+    tags: [ Research Data, Repository, Dataverse, Open Data, REST ]
+    properties:
+      - type: Documentation
+        url: https://guides.dataverse.org/en/latest/api/
+common:
+  - type: Website
+    url: https://vu.nl/en
+  - type: GitHub
+    url: https://github.com/Vrije-Universiteit-Amsterdam
+  - type: SourceCode
+    url: https://github.com/ubvu
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/vrije-universiteit-amsterdam/
+  - type: Twitter
+    url: https://twitter.com/VUamsterdam
+  - type: Plans
+    url: plans/vrije-universiteit-amsterdam-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/vrije-universiteit-amsterdam-rate-limits.yml
+  - type: FinOps
+    url: finops/vrije-universiteit-amsterdam-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

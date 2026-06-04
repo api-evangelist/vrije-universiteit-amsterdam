@@ -1,0 +1,49 @@
+---
+name: Vrije Universiteit Amsterdam
+description: Vrije Universiteit Amsterdam public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/vrije-universiteit-amsterdam/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 2
+    summary: >-
+      VU Amsterdam has no centralized public developer portal. The verifiable
+      programmatic footprint is research infrastructure: the VU Research Portal
+      (Elsevier Pure) exposes a live OAI-PMH endpoint at research.vu.nl/ws/oai
+      (Identify returns "Vrije Universiteit Amsterdam Repository", admin
+      pure.ub@vu.nl) and a Pure REST web service at research.vu.nl/ws/api that
+      responds but is gated (302). Research data is shared via DataverseNL, whose
+      Dataverse software provides documented REST APIs. An official GitHub org
+      (Vrije-Universiteit-Amsterdam) exists but shows no public repos; the
+      University Library org (ubvu) is active with ~86 public repos of
+      open-science tooling. No public course/timetable/SIS or identity API was
+      found. No endpoints were fabricated; statuses below reflect live probes.
+    endpoints:
+      - url: https://research.vu.nl/ws/oai?verb=Identify
+        status: 200
+        note: Live OAI-PMH; returns valid Identify XML for the VU repository.
+      - url: https://research.vu.nl/ws/oai?verb=ListMetadataFormats
+        status: 200
+        note: OAI-PMH ListMetadataFormats verb responds.
+      - url: https://research.vu.nl/ws/api
+        status: 302
+        note: Pure REST web service present but redirects/gated (auth required).
+      - url: https://research.vu.nl/
+        status: 200
+        note: VU Research Portal (Elsevier Pure) homepage.
+      - url: https://dataverse.nl/dataverse/vuamsterdam
+        status: 200
+        note: VU Amsterdam research data collection on DataverseNL.
+      - url: https://github.com/Vrije-Universiteit-Amsterdam
+        status: 200
+        note: Official GitHub org; no public repositories/members shown.
+      - url: https://github.com/ubvu
+        status: 200
+        note: University Library org, ~86 public repos of open-science tooling.
+      - url: https://vu.nl/en
+        status: 200
+        note: Official university website.
+      - url: https://www.linkedin.com/school/vrije-universiteit-amsterdam/
+        status: 999
+        note: LinkedIn school page; 999 is LinkedIn anti-bot, page exists.
