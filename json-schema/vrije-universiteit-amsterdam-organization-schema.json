@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://research.vu.nl/ws/api/schemas/organization.json",
+  "title": "Organization",
+  "description": "An organizational unit as exposed by the VU Amsterdam Pure REST web service (Pure API v5.34.3).",
+  "type": "object",
+  "required": ["lifecycle", "name", "type"],
+  "properties": {
+    "pureId": { "type": "integer", "description": "Pure database ID of the object; prefer the UUID when present." },
+    "uuid": { "type": "string", "format": "uuid", "description": "UUID, the primary identity of the entity." },
+    "createdBy": { "type": "string", "description": "Username of creator." },
+    "createdDate": { "type": "string", "format": "date-time", "description": "Date and time of creation." },
+    "modifiedBy": { "type": "string", "description": "Username of the user that performed a modification." },
+    "modifiedDate": { "type": "string", "format": "date-time", "description": "Date and time of last modification." },
+    "portalUrl": { "type": "string", "description": "URL of the unit on the Pure Portal." },
+    "name": { "type": "object", "description": "Localized name of the organizational unit." },
+    "type": { "type": "string", "description": "Classification reference for the organization type (faculty, department, etc.)." },
+    "lifecycle": { "type": "object", "description": "Active period (start/end) of the organizational unit." },
+    "identifiers": { "type": "array", "description": "External identifiers related to the organization.", "items": { "type": "object" } },
+    "version": { "type": "string", "description": "Optimistic-locking version token." }
+  }
+}

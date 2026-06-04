@@ -1,0 +1,51 @@
+rules:
+
+  vu-info-title:
+    description: API must declare an info.title.
+    severity: error
+    given: $.info
+    then:
+      field: title
+      function: truthy
+
+  vu-info-version:
+    description: API must declare an info.version (Pure API uses semantic versions like 5.34.3).
+    severity: error
+    given: $.info
+    then:
+      field: version
+      function: truthy
+
+  vu-server-defined:
+    description: At least one server should be defined, pointing at the Pure web service base path.
+    severity: warn
+    given: $
+    then:
+      field: servers
+      function: truthy
+
+  vu-uuid-format:
+    description: Object identity properties named "uuid" should declare format uuid.
+    severity: warn
+    given: $.components.schemas..properties.uuid
+    then:
+      field: format
+      function: pattern
+      functionOptions:
+        match: ^uuid$
+
+  vu-operation-id:
+    description: Every operation should declare an operationId (Pure exposes ids like researchOutput_list).
+    severity: warn
+    given: $.paths[*][get,put,post,delete]
+    then:
+      field: operationId
+      function: truthy
+
+  vu-json-responses:
+    description: Read operations should advertise an application/json response media type.
+    severity: warn
+    given: $.paths[*].get.responses.200.content
+    then:
+      field: application/json
+      function: truthy

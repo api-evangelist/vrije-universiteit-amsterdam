@@ -1,0 +1,68 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "vu": "https://research.vu.nl/ns#",
+    "name": "schema:name",
+    "url": "schema:url",
+    "description": "schema:description",
+    "identifier": "schema:identifier",
+    "Institution": {
+      "@id": "schema:CollegeOrUniversity",
+      "@context": {
+        "name": "schema:name",
+        "url": "schema:url"
+      }
+    },
+    "ResearchOutput": {
+      "@id": "schema:ScholarlyArticle",
+      "@context": {
+        "uuid": { "@id": "schema:identifier" },
+        "pureId": { "@id": "vu:pureId" },
+        "title": { "@id": "schema:name" },
+        "subTitle": { "@id": "schema:alternateName" },
+        "abstract": { "@id": "schema:abstract" },
+        "type": { "@id": "schema:additionalType" },
+        "language": { "@id": "schema:inLanguage" },
+        "submissionYear": { "@id": "schema:datePublished" },
+        "peerReview": { "@id": "vu:peerReviewed", "@type": "schema:Boolean" },
+        "contributors": { "@id": "schema:author", "@container": "@set" },
+        "managingOrganization": { "@id": "schema:publisher" },
+        "portalUrl": { "@id": "schema:url", "@type": "@id" },
+        "identifiers": { "@id": "schema:identifier", "@container": "@set" }
+      }
+    },
+    "Person": {
+      "@id": "schema:Person",
+      "@context": {
+        "uuid": { "@id": "schema:identifier" },
+        "name": { "@id": "schema:name" },
+        "portalUrl": { "@id": "schema:url", "@type": "@id" },
+        "staffOrganizationAssociations": { "@id": "schema:affiliation", "@container": "@set" }
+      }
+    },
+    "Organization": {
+      "@id": "schema:Organization",
+      "@context": {
+        "uuid": { "@id": "schema:identifier" },
+        "name": { "@id": "schema:name" },
+        "type": { "@id": "schema:additionalType" },
+        "portalUrl": { "@id": "schema:url", "@type": "@id" }
+      }
+    },
+    "Project": {
+      "@id": "schema:ResearchProject",
+      "@context": {
+        "uuid": { "@id": "schema:identifier" },
+        "title": { "@id": "schema:name" },
+        "type": { "@id": "schema:additionalType" },
+        "managingOrganization": { "@id": "schema:funder" },
+        "portalUrl": { "@id": "schema:url", "@type": "@id" }
+      }
+    }
+  },
+  "@type": "Institution",
+  "name": "Vrije Universiteit Amsterdam",
+  "url": "https://vu.nl/en",
+  "description": "Public research university in Amsterdam, Netherlands. Its VU Research Portal exposes the Elsevier Pure REST web service and an OAI-PMH metadata harvesting endpoint at research.vu.nl."
+}

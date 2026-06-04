@@ -1,0 +1,27 @@
+{
+  "count": 1,
+  "pageInformation": {
+    "offset": 0,
+    "size": 25
+  },
+  "items": [
+    {
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "pureId": 123456,
+      "title": "Example research output from the VU Amsterdam Repository",
+      "type": "/dk/atira/pure/researchoutput/researchoutputtypes/contributiontojournal/article",
+      "category": "/dk/atira/pure/researchoutput/category/academic",
+      "language": "/dk/atira/pure/core/languages/en_GB",
+      "peerReview": true,
+      "submissionYear": 2025,
+      "totalNumberOfContributors": 3,
+      "managingOrganization": { "uuid": "11111111-1111-1111-1111-111111111111" },
+      "portalUrl": "https://research.vu.nl/en/publications/example",
+      "createdDate": "2025-01-15T10:00:00.000Z",
+      "modifiedDate": "2025-02-01T08:30:00.000Z",
+      "identifiers": [
+        { "type": "doi", "value": "10.0000/example.2025" }
+      ]
+    }
+  ]
+}

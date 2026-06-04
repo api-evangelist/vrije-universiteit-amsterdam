@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://research.vu.nl/ws/api/structures/research-output.json",
+  "name": "ResearchOutput",
+  "description": "JSON Structure for a VU Amsterdam Pure research output (publication).",
+  "type": "object",
+  "properties": {
+    "uuid": { "type": "string", "description": "Primary UUID identity of the research output." },
+    "pureId": { "type": "int64", "description": "Pure database ID." },
+    "title": { "type": "string", "description": "Title of the research output." },
+    "subTitle": { "type": "string", "description": "Sub-title of the research output." },
+    "type": { "type": "string", "description": "Research output type classification." },
+    "category": { "type": "string", "description": "Research output category classification." },
+    "language": { "type": "string", "description": "Language classification." },
+    "peerReview": { "type": "boolean", "description": "Peer reviewed flag." },
+    "submissionYear": { "type": "int32", "description": "Submission year." },
+    "totalNumberOfContributors": { "type": "int32", "description": "Total number of contributors." },
+    "managingOrganization": { "type": "string", "description": "Managing organizational unit UUID/reference." },
+    "portalUrl": { "type": "string", "description": "Public Pure Portal URL." },
+    "abstract": { "type": "string", "description": "Abstract text." },
+    "createdDate": { "type": "string", "description": "Creation date-time (ISO 8601)." },
+    "modifiedDate": { "type": "string", "description": "Last modification date-time (ISO 8601)." },
+    "contributors": {
+      "type": "array",
+      "description": "Contributors and affiliations.",
+      "items": { "type": "object", "properties": {} }
+    },
+    "identifiers": {
+      "type": "array",
+      "description": "Identifiers such as DOI / ISBN.",
+      "items": { "type": "object", "properties": {} }
+    }
+  },
+  "required": ["uuid", "title", "type", "category", "language", "managingOrganization"]
+}

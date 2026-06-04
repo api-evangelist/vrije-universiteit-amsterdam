@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://research.vu.nl/ws/api/schemas/person.json",
+  "title": "Person",
+  "description": "A person (researcher) record as exposed by the VU Amsterdam Pure REST web service (Pure API v5.34.3).",
+  "type": "object",
+  "properties": {
+    "pureId": { "type": "integer", "description": "Pure database ID of the object; prefer the UUID when present." },
+    "uuid": { "type": "string", "format": "uuid", "description": "UUID, the primary identity of the entity." },
+    "createdBy": { "type": "string", "description": "Username of creator." },
+    "createdDate": { "type": "string", "format": "date-time", "description": "Date and time of creation." },
+    "modifiedBy": { "type": "string", "description": "Username of the user that performed a modification." },
+    "modifiedDate": { "type": "string", "format": "date-time", "description": "Date and time of last modification." },
+    "portalUrl": { "type": "string", "description": "URL of the person's profile on the Pure Portal." },
+    "name": { "type": "object", "description": "Structured name (first/last) of the person." },
+    "names": { "type": "array", "description": "Alternative/historical names.", "items": { "type": "object" } },
+    "titles": { "type": "array", "description": "Academic titles held by the person.", "items": { "type": "object" } },
+    "gender": { "type": "string", "description": "Classification reference for the person's gender." },
+    "staffOrganizationAssociations": {
+      "type": "array",
+      "description": "Associations between the person and organizational units as staff.",
+      "items": { "type": "object" }
+    },
+    "identifiers": {
+      "type": "array",
+      "description": "External identifiers (ORCID, Scopus, etc.) related to the person.",
+      "items": { "type": "object" }
+    },
+    "version": { "type": "string", "description": "Optimistic-locking version token." }
+  }
+}

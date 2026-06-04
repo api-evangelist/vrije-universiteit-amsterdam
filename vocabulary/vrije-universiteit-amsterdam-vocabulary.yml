@@ -1,0 +1,49 @@
+vocabulary:
+  name: VU Amsterdam Research (Pure) Vocabulary
+  description: >-
+    Controlled terms drawn from the Vrije Universiteit Amsterdam Pure REST web
+    service (Pure API v5.34.3) at research.vu.nl/ws/api, covering the core
+    research-information objects exposed by the VU Research Portal.
+  version: "5.34.3"
+  terms:
+    - term: ResearchOutput
+      definition: >-
+        A scholarly output such as a journal article, book, conference
+        contribution, thesis, or working paper recorded in the VU Research Portal.
+      tags: [ research, publication, output ]
+    - term: Person
+      definition: A researcher or staff member with a profile in the VU Research Portal.
+      tags: [ person, researcher, staff ]
+    - term: Organization
+      definition: >-
+        An organizational unit (faculty, department, research group) within
+        Vrije Universiteit Amsterdam.
+      tags: [ organization, unit, faculty ]
+    - term: Project
+      definition: A research project managed and reported in Pure.
+      tags: [ project, research ]
+    - term: uuid
+      definition: The primary UUID identity of a Pure entity.
+      tags: [ identifier, key ]
+    - term: pureId
+      definition: The internal Pure database identifier for an entity.
+      tags: [ identifier, internal ]
+    - term: portalUrl
+      definition: The public Pure Portal URL for an entity on research.vu.nl.
+      tags: [ url, portal, public ]
+    - term: managingOrganization
+      definition: The organizational unit responsible for managing a record.
+      tags: [ organization, ownership ]
+    - term: contributor
+      definition: A person (internal or external) credited on a research output.
+      tags: [ person, authorship ]
+    - term: classificationRef
+      definition: >-
+        A reference into a Pure classification scheme (e.g. output type,
+        category, language) expressed as a hierarchical URI.
+      tags: [ classification, taxonomy ]
+    - term: OAI-PMH
+      definition: >-
+        The Open Archives Initiative Protocol for Metadata Harvesting endpoint
+        at research.vu.nl/ws/oai used to harvest repository metadata.
+      tags: [ harvesting, metadata, protocol ]

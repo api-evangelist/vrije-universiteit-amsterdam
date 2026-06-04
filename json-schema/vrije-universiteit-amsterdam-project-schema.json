@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://research.vu.nl/ws/api/schemas/project.json",
+  "title": "Project",
+  "description": "A research project as exposed by the VU Amsterdam Pure REST web service (Pure API v5.34.3).",
+  "type": "object",
+  "required": ["managingOrganization", "organizations", "title", "type", "typeDiscriminator"],
+  "properties": {
+    "pureId": { "type": "integer", "description": "Pure database ID of the object; prefer the UUID when present." },
+    "uuid": { "type": "string", "format": "uuid", "description": "UUID, the primary identity of the entity." },
+    "createdBy": { "type": "string", "description": "Username of creator." },
+    "createdDate": { "type": "string", "format": "date-time", "description": "Date and time of creation." },
+    "modifiedBy": { "type": "string", "description": "Username of the user that performed a modification." },
+    "modifiedDate": { "type": "string", "format": "date-time", "description": "Date and time of last modification." },
+    "portalUrl": { "type": "string", "description": "URL of the project on the Pure Portal." },
+    "title": { "type": "string", "description": "Localized title of the project." },
+    "type": { "type": "string", "description": "Classification reference for the project type." },
+    "managingOrganization": { "type": "object", "description": "Reference to the managing organizational unit." },
+    "organizations": { "type": "array", "description": "Participating organizational units.", "items": { "type": "object" } },
+    "identifiers": { "type": "array", "description": "External identifiers related to the project.", "items": { "type": "object" } },
+    "typeDiscriminator": { "type": "string", "description": "Discriminator identifying the concrete project subtype." },
+    "version": { "type": "string", "description": "Optimistic-locking version token." }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://research.vu.nl/ws/api/structures/person.json",
+  "name": "Person",
+  "description": "JSON Structure for a VU Amsterdam Pure person (researcher).",
+  "type": "object",
+  "properties": {
+    "uuid": { "type": "string", "description": "Primary UUID identity of the person." },
+    "pureId": { "type": "int64", "description": "Pure database ID." },
+    "name": { "type": "object", "description": "Structured first/last name.", "properties": {} },
+    "gender": { "type": "string", "description": "Gender classification." },
+    "portalUrl": { "type": "string", "description": "Public Pure Portal profile URL." },
+    "createdDate": { "type": "string", "description": "Creation date-time (ISO 8601)." },
+    "modifiedDate": { "type": "string", "description": "Last modification date-time (ISO 8601)." },
+    "staffOrganizationAssociations": {
+      "type": "array",
+      "description": "Staff affiliations with organizational units.",
+      "items": { "type": "object", "properties": {} }
+    },
+    "identifiers": {
+      "type": "array",
+      "description": "External identifiers such as ORCID or Scopus.",
+      "items": { "type": "object", "properties": {} }
+    }
+  },
+  "required": ["uuid"]
+}

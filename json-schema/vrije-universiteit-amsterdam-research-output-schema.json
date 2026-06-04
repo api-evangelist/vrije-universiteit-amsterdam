@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://research.vu.nl/ws/api/schemas/research-output.json",
+  "title": "ResearchOutput",
+  "description": "A research output (publication, dataset reference, thesis, etc.) as exposed by the VU Amsterdam Pure REST web service. Properties reflect the Pure API v5.34.3 OpenAPI definition.",
+  "type": "object",
+  "required": [
+    "category",
+    "contributors",
+    "language",
+    "managingOrganization",
+    "publicationStatuses",
+    "title",
+    "type",
+    "typeDiscriminator"
+  ],
+  "properties": {
+    "pureId": {
+      "type": "integer",
+      "description": "Pure database ID of the object; prefer the UUID when present."
+    },
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID, the primary identity of the entity."
+    },
+    "createdBy": { "type": "string", "description": "Username of creator." },
+    "createdDate": { "type": "string", "format": "date-time", "description": "Date and time of creation." },
+    "modifiedBy": { "type": "string", "description": "Username of the user that performed a modification." },
+    "modifiedDate": { "type": "string", "format": "date-time", "description": "Date and time of last modification." },
+    "portalUrl": { "type": "string", "description": "URL of the content on the Pure Portal." },
+    "version": { "type": "string", "description": "Optimistic-locking version token used to guard against conflicting updates." },
+    "title": { "type": "string", "description": "Formatted title of the research output." },
+    "subTitle": { "type": "string", "description": "Formatted sub-title of the research output." },
+    "type": { "type": "string", "description": "Classification reference for the research output type." },
+    "category": { "type": "string", "description": "Classification reference for the research output category." },
+    "peerReview": { "type": "boolean", "description": "Whether the research output is peer reviewed." },
+    "internationalPeerReview": { "type": "boolean", "description": "Whether the research output is internationally peer reviewed." },
+    "language": { "type": "string", "description": "Classification reference for the language of the output." },
+    "totalNumberOfContributors": { "type": "integer", "description": "Total number of authors from author collaborations." },
+    "managingOrganization": { "type": "object", "description": "Reference to the managing organizational unit." },
+    "submissionYear": { "type": "integer", "description": "The submission year of the research output." },
+    "contributors": {
+      "type": "array",
+      "description": "Contributors and their affiliations.",
+      "items": { "type": "object" }
+    },
+    "organizations": {
+      "type": "array",
+      "description": "Organizational unit affiliations.",
+      "items": { "type": "object" }
+    },
+    "externalOrganizations": {
+      "type": "array",
+      "description": "External organization affiliations.",
+      "items": { "type": "object" }
+    },
+    "publicationStatuses": {
+      "type": "array",
+      "description": "The research output's statuses and the dates they were reached.",
+      "items": { "type": "object" }
+    },
+    "electronicVersions": {
+      "type": "array",
+      "description": "Electronic versions of this research output.",
+      "items": { "type": "object" }
+    },
+    "identifiers": {
+      "type": "array",
+      "description": "Identifiers (DOI, ISBN, etc.) related to the research output.",
+      "items": { "type": "object" }
+    },
+    "keywordGroups": {
+      "type": "array",
+      "description": "Groups of keywords associated with the research output.",
+      "items": { "type": "object" }
+    },
+    "abstract": { "type": "string", "description": "Formatted localized abstract of the research output." },
+    "typeDiscriminator": { "type": "string", "description": "Discriminator identifying the concrete research output subtype." }
+  }
+}

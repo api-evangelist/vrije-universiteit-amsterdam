@@ -61,6 +61,8 @@ apis:
         url: https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
       - type: Authentication
         url: https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
+      - type: OpenAPI
+        url: openapi/vrije-universiteit-amsterdam-pure-web-service.yaml
   - aid: vrije-universiteit-amsterdam:dataverse-nl
     name: VU Amsterdam research data on DataverseNL
     description: >-
