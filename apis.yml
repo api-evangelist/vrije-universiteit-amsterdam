@@ -78,6 +78,10 @@ apis:
       - type: Documentation
         url: https://guides.dataverse.org/en/latest/api/
 common:
+  - type: DomainSecurity
+    url: security/vrije-universiteit-amsterdam-domain-security.yml
+  - type: Authentication
+    url: authentication/vrije-universiteit-amsterdam-authentication.yml
   - type: Website
     url: https://vu.nl/en
   - type: GitHub

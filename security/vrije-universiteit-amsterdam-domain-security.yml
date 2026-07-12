@@ -1,0 +1,45 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: vu.nl
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec 11 05:49:13 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: research.vu.nl
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 14 07:43:54 2026 GMT
+  hsts: true
+  hsts_max_age: 2592000
+- host: dataverse.nl
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 26 12:19:21 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: vu.nl
+  dnssec: true
+  caa:
+  - 0 issue "harica.gr"
+  - 0 issue "pki.goog; cansignhttpexchanges=yes"
+  - 0 issue "digicert.com"
+  - 0 issuewild "harica.gr"
+  - 0 iodef "mailto:socc@vu.nl"
+  - 0 issue "letsencrypt.org"
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: dataverse.nl
+  dnssec: true
+  caa:
+  - 0 issue "letsencrypt.org"
+  - 0 iodef "mailto:knawnet@knaw.nl"
+  - 0 issue "harica.gr"
+  - 0 issuewild "harica.gr"
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
