@@ -1,0 +1,1646 @@
+{
+  "item": [
+    {
+      "id": "99849c5c-dabf-4c89-9e4f-cdecdfaf3f29",
+      "name": "keywordGroupConfiguration",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "42b37c65-3dea-4726-b94a-2203ff975764",
+          "name": "Lists all keyword group configurations",
+          "request": {
+            "name": "Lists all keyword group configurations",
+            "description": {
+              "content": "Lists all keyword group configurations in the Pure instance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "keyword-group-configurations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10",
+                  "description": "Number of returned keyword group configurations per request."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "The offset for the returned list. 0 or null value is from the start"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>",
+                  "description": "The order of the list, must be a value from keywordGroupConfigurations_getOrderings"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3ad1298-0314-4e22-b3a4-2dc6b0d7633f",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 4146,\n  \"pageInformation\": {\n    \"offset\": 4180,\n    \"size\": 1114\n  },\n  \"items\": [\n    {\n      \"logicalName\": \"string\",\n      \"targetSystemName\": \"string\",\n      \"weight\": 9945,\n      \"pureId\": 6164,\n      \"uuid\": \"d42e6f7f-18bd-26de-14a6-fcfb0df6d74f\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1987-12-22T14:25:59.759Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1987-12-17T08:38:32.650Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"keywordGroupType\": \"string\",\n      \"name\": {\n        \"en_GB\": \"Some text\"\n      },\n      \"description\": {\n        \"en_GB\": \"Some text\"\n      },\n      \"classificationScheme\": {\n        \"systemName\": \"string\",\n        \"uuid\": \"735278e2-6023-29cb-9744-bfc7de551e6e\"\n      },\n      \"allowUserdefinedKeywords\": false,\n      \"limitToLeafSelection\": false,\n      \"minAmountOfKeywords\": 1189,\n      \"maxAmountOfKeywords\": 4142,\n      \"modifyingRoles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"userdefinedKeywordEditMode\": \"ALL_SUPPORTED_SUBMISSION_LOCALES\",\n      \"selectionModeSortingOrder\": \"ASCENDING\",\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"relationType\": \"string\",\n      \"systemName\": \"string\"\n    },\n    {\n      \"logicalName\": \"string\",\n      \"targetSystemName\": \"string\",\n      \"weight\": 8421,\n      \"pureId\": 4598,\n      \"uuid\": \"34d09583-870d-a841-f0bb-3dcf1096f105\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"2011-04-20T08:14:06.240Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1995-07-13T07:40:46.822Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"keywordGroupType\": \"string\",\n      \"name\": {\n        \"en_GB\": \"Some text\"\n      },\n      \"description\": {\n        \"en_GB\": \"Some text\"\n      },\n      \"classificationScheme\": {\n        \"systemName\": \"string\",\n        \"uuid\": \"d9434b61-7cfa-d48d-d42c-927121c08873\"\n      },\n      \"allowUserdefinedKeywords\": true,\n      \"limitToLeafSelection\": true,\n      \"minAmountOfKeywords\": 2042,\n      \"maxAmountOfKeywords\": 8912,\n      \"modifyingRoles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"userdefinedKeywordEditMode\": \"ALL_SUPPORTED_SUBMISSION_LOCALES\",\n      \"selectionModeSortingOrder\": \"ASCENDING\",\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"relationType\": \"string\",\n      \"systemName\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "faeddd26-6e3c-43fb-b7d2-8955efc5c43e",
+          "name": "Create keyword group configuration",
+          "request": {
+            "name": "Create keyword group configuration",
+            "description": {
+              "content": "Create keyword group configuration",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "keyword-group-configurations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"version\": \"<string>\",\n  \"name\": {\n    \"key_0\": \"<string>\"\n  },\n  \"description\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"classificationScheme\": \"<object>\",\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "071a982a-5a4f-47ce-8b25-b05d9270e8d3",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"version\": \"<string>\",\n  \"name\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"description\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"classificationScheme\": {\n    \"systemName\": \"<string>\",\n    \"uuid\": \"<uuid>\"\n  },\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"pureId\": 2858,\n  \"uuid\": \"9141d2db-dc86-9316-f22a-56a005478362\",\n  \"createdBy\": \"string\",\n  \"createdDate\": \"1949-07-12T20:01:04.143Z\",\n  \"modifiedBy\": \"string\",\n  \"modifiedDate\": \"1968-03-10T19:28:59.787Z\",\n  \"portalUrl\": \"string\",\n  \"prettyUrlIdentifiers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"previousUuids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"version\": \"<string>\",\n  \"keywordGroupType\": \"string\",\n  \"name\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"description\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"classificationScheme\": {\n    \"systemName\": \"<string>\",\n    \"uuid\": \"<uuid>\"\n  },\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\",\n  \"systemName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6d53252-90dc-42d4-bc49-eefb28935d0e",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"version\": \"<string>\",\n  \"name\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"description\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"classificationScheme\": {\n    \"systemName\": \"<string>\",\n    \"uuid\": \"<uuid>\"\n  },\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7327,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c8f100d-6195-4c4a-b7c7-6a1c09f02651",
+          "name": "A list of allowed locales in localized strings",
+          "request": {
+            "name": "A list of allowed locales in localized strings",
+            "description": {
+              "content": "Get a list of allowed locales that can be used when submitting localized string entities.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "keyword-group-configurations",
+                "allowed-locales"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4c1b0e4e-78f3-472f-bb5b-76d3a600537f",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    "allowed-locales"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"locales\": \"/gn_WJ/\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eba4e01d-f4ad-46a0-9809-8a9e59bfdf56",
+          "name": "A map of allowed relation types",
+          "request": {
+            "name": "A map of allowed relation types",
+            "description": {
+              "content": "The map key is the target system name and the value is the list of possible values to assign to relation type. Apart from the allowed values here, relation type can also be set to null (see description of relationType on KeywordGroupConfiguration).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "keyword-group-configurations",
+                "allowed-relation-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "790d8dd8-41b5-4d92-987a-886abda0b606",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    "allowed-relation-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": {\n    \"key_0\": [\n      \"string\",\n      \"string\"\n    ],\n    \"key_1\": [\n      \"string\",\n      \"string\"\n    ],\n    \"key_2\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"count\": 6412\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "984230f2-143f-4c5b-8412-6f8005d76684",
+          "name": "A list of allowed target system names",
+          "request": {
+            "name": "A list of allowed target system names",
+            "description": {
+              "content": "Get a list of allowed target system names this keyword group configuration is associated with.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "keyword-group-configurations",
+                "allowed-target-system-names"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b091198b-c065-4ad1-a854-8aec511a2c26",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    "allowed-target-system-names"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    \"string\",\n    \"string\"\n  ],\n  \"count\": 9112\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4839abdc-e2a8-477f-870e-5105cbd9e612",
+          "name": "Get keyword group configuration",
+          "request": {
+            "name": "Get keyword group configuration",
+            "description": {
+              "content": "Get keyword group configuration with specific UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "keyword-group-configurations",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the desired keyword group configuration"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7cf532a9-2e0a-4609-bcac-5de4237865fe",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired keyword group configuration"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"pureId\": 2858,\n  \"uuid\": \"9141d2db-dc86-9316-f22a-56a005478362\",\n  \"createdBy\": \"string\",\n  \"createdDate\": \"1949-07-12T20:01:04.143Z\",\n  \"modifiedBy\": \"string\",\n  \"modifiedDate\": \"1968-03-10T19:28:59.787Z\",\n  \"portalUrl\": \"string\",\n  \"prettyUrlIdentifiers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"previousUuids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"version\": \"<string>\",\n  \"keywordGroupType\": \"string\",\n  \"name\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"description\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"classificationScheme\": {\n    \"systemName\": \"<string>\",\n    \"uuid\": \"<uuid>\"\n  },\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\",\n  \"systemName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e4d11f37-36ee-4e74-8c26-6982ffcf2d41",
+              "name": "The requested content have changed UUID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired keyword group configuration"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Moved Permanently",
+              "code": 301,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1b8c0e30-3a8f-43f0-9ffd-3b7f68ea3419",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired keyword group configuration"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7327,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa596d0c-2504-47c2-bb13-b59513a823ce",
+          "name": "Update keyword group configuration",
+          "request": {
+            "name": "Update keyword group configuration",
+            "description": {
+              "content": "Update keyword group configuration with specific UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "keyword-group-configurations",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the keyword group configuration to update."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"version\": \"<string>\",\n  \"name\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"description\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"classificationScheme\": \"<object>\",\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "97d59eaa-282c-4056-94a9-9d7838843a25",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the keyword group configuration to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"version\": \"<string>\",\n  \"name\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"description\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"classificationScheme\": {\n    \"systemName\": \"<string>\",\n    \"uuid\": \"<uuid>\"\n  },\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"pureId\": 2858,\n  \"uuid\": \"9141d2db-dc86-9316-f22a-56a005478362\",\n  \"createdBy\": \"string\",\n  \"createdDate\": \"1949-07-12T20:01:04.143Z\",\n  \"modifiedBy\": \"string\",\n  \"modifiedDate\": \"1968-03-10T19:28:59.787Z\",\n  \"portalUrl\": \"string\",\n  \"prettyUrlIdentifiers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"previousUuids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"version\": \"<string>\",\n  \"keywordGroupType\": \"string\",\n  \"name\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"description\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"classificationScheme\": {\n    \"systemName\": \"<string>\",\n    \"uuid\": \"<uuid>\"\n  },\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\",\n  \"systemName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "05817ce9-7c44-4d80-8df8-6cccb9da25c9",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the keyword group configuration to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"version\": \"<string>\",\n  \"name\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"description\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"classificationScheme\": {\n    \"systemName\": \"<string>\",\n    \"uuid\": \"<uuid>\"\n  },\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7327,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ec102047-dbd7-49f0-b45f-91c8de703de2",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the keyword group configuration to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"version\": \"<string>\",\n  \"name\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"description\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"classificationScheme\": {\n    \"systemName\": \"<string>\",\n    \"uuid\": \"<uuid>\"\n  },\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7327,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c658ad4-2866-418b-9902-90fd88aec873",
+              "name": "Version conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the keyword group configuration to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logicalName\": \"<string>\",\n  \"targetSystemName\": \"<string>\",\n  \"weight\": \"<integer>\",\n  \"version\": \"<string>\",\n  \"name\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"description\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"classificationScheme\": {\n    \"systemName\": \"<string>\",\n    \"uuid\": \"<uuid>\"\n  },\n  \"allowUserdefinedKeywords\": \"<boolean>\",\n  \"limitToLeafSelection\": \"<boolean>\",\n  \"minAmountOfKeywords\": \"<integer>\",\n  \"maxAmountOfKeywords\": \"<integer>\",\n  \"modifyingRoles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userdefinedKeywordEditMode\": \"<string>\",\n  \"selectionModeSortingOrder\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"relationType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 4004,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"modified\": \"1960-04-04T05:26:39.606Z\",\n  \"modifiedBy\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dba59113-d11b-471b-b42e-f45cb75cabb1",
+          "name": "Delete keyword group configuration",
+          "request": {
+            "name": "Delete keyword group configuration",
+            "description": {
+              "content": "Delete keyword group configuration with specific UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "keyword-group-configurations",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the keyword group configuration"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/problem+json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9919672-9c24-4327-86f3-b4cc9f57991e",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the keyword group configuration"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "00e39aed-3a48-47da-831b-ccb1c2a4c700",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the keyword group configuration"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7327,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4286a264-452d-4fde-89ff-db568e9dfbf7",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the keyword group configuration"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 4004,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"modified\": \"1960-04-04T05:26:39.606Z\",\n  \"modifiedBy\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ed12e0a-28a3-4129-b0ac-3fc14c73a90f",
+          "name": "Lock the content",
+          "request": {
+            "name": "Lock the content",
+            "description": {
+              "content": "Mark the content as external (used when content contains synchronised data). This has no effect on interactions with the content through the API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "keyword-group-configurations",
+                ":uuid",
+                "actions",
+                "lock"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the content to lock"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/problem+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57ef6494-f53c-417e-9f96-0ccf2e2d970c",
+              "name": "Content marked as locked",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid",
+                    "actions",
+                    "lock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the content to lock"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c92ef5d6-722a-4f9c-b4e4-8e43a7a4b66c",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid",
+                    "actions",
+                    "lock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the content to lock"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7327,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c5faf81-26d0-4847-a9e1-abb40c7003b3",
+              "name": "Content already locked",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid",
+                    "actions",
+                    "lock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the content to lock"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 4004,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"modified\": \"1960-04-04T05:26:39.606Z\",\n  \"modifiedBy\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81b27307-ec46-453e-bfb1-09a7167e0fe1",
+          "name": "Unlock the content",
+          "request": {
+            "name": "Unlock the content",
+            "description": {
+              "content": "Remove the external mark on the content (used when content contains synchronised data). This has no effect on interactions with the content through the API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "keyword-group-configurations",
+                ":uuid",
+                "actions",
+                "unlock"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the content to unlock"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/problem+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "675f07df-f3ab-4bb1-aa2e-bcf4cab974f2",
+              "name": "Content marked as unlocked",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid",
+                    "actions",
+                    "unlock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the content to unlock"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "878fc75a-0a46-4804-a245-a323da7d2b69",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid",
+                    "actions",
+                    "unlock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the content to unlock"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7327,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a9f4a68-584b-445b-a1cc-a27d4c999789",
+              "name": "Content already unlocked",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "keyword-group-configurations",
+                    ":uuid",
+                    "actions",
+                    "unlock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the content to unlock"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 4004,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"modified\": \"1960-04-04T05:26:39.606Z\",\n  \"modifiedBy\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://research.vu.nl/ws/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b125e135-a3e6-48d5-bdaa-5fed95a5eace",
+    "name": "Pure activity keywordGroupConfiguration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Pure API provides a secure and complete web services API for using and managing research information data in Pure. The API enables a broad range of use-cases for interacting with research information, from anonymous Open Data scenarios to enabling the next generation Pure admin.\n\nContact Support:\n Email: pure-support@elsevier.com",
+      "type": "text/plain"
+    }
+  }
+}

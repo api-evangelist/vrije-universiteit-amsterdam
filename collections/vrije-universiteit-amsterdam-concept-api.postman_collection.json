@@ -1,0 +1,588 @@
+{
+  "item": [
+    {
+      "id": "cec8d742-df44-40c2-b288-042f7e638849",
+      "name": "concept",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d355fc3-e207-4339-ad8a-fd59928c8907",
+          "name": "Lists all concept",
+          "request": {
+            "name": "Lists all concept",
+            "description": {
+              "content": "Lists all concept in the Pure instance. If you need to filter the concept returned, see the POST version which supports additional filtering.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "concepts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10",
+                  "description": "Number of returned concept per request."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "The offset for the returned list. 0 or null value is from the start"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>",
+                  "description": "The order of the list, must be a value from /concept/orderings"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "872cecaf-24af-4f28-a16e-3336a8e51db4",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "concepts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 5228,\n  \"pageInformation\": {\n    \"offset\": 1419,\n    \"size\": 7347\n  },\n  \"items\": [\n    {\n      \"conceptId\": \"string\",\n      \"thesaurus\": {\n        \"systemName\": \"string\",\n        \"uuid\": \"46573831-06e7-8086-abc7-4e1357658adb\"\n      },\n      \"pureId\": 4715,\n      \"uuid\": \"95e500bb-afd2-63ef-ac38-fc7f4e8b86e5\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"2000-04-14T06:52:14.479Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1949-06-14T13:12:25.440Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"parentConcepts\": [\n        {\n          \"systemName\": \"string\",\n          \"uuid\": \"1d472b5d-52b7-47b2-e57b-efee4c61798b\"\n        },\n        {\n          \"systemName\": \"string\",\n          \"uuid\": \"b23cd7b8-9ad3-ee16-6e5a-7075583a82b9\"\n        }\n      ],\n      \"name\": {\n        \"en_GB\": \"Some text\"\n      },\n      \"terms\": [\n        {\n          \"locale\": \"string\",\n          \"pureId\": 7441,\n          \"text\": \"string\"\n        },\n        {\n          \"locale\": \"string\",\n          \"pureId\": 4595,\n          \"text\": \"string\"\n        }\n      ],\n      \"inverseDocumentFrequency\": 8687.822556530977,\n      \"identifiers\": [\n        {\n          \"typeDiscriminator\": \"string\"\n        },\n        {\n          \"typeDiscriminator\": \"string\"\n        }\n      ],\n      \"systemName\": \"string\"\n    },\n    {\n      \"conceptId\": \"string\",\n      \"thesaurus\": {\n        \"systemName\": \"string\",\n        \"uuid\": \"9630f8c5-6cff-66b7-3ff1-772e5cb842c2\"\n      },\n      \"pureId\": 1287,\n      \"uuid\": \"c131d881-60ae-30f5-ebf7-d081fb5d0fc4\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1948-09-14T05:32:23.937Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1960-09-24T08:25:25.171Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"parentConcepts\": [\n        {\n          \"systemName\": \"string\",\n          \"uuid\": \"7f0fb746-dd86-1dc3-82ec-dea4b4047b81\"\n        },\n        {\n          \"systemName\": \"string\",\n          \"uuid\": \"a1d544f6-5b7e-4ea0-ff30-59e6173fe17e\"\n        }\n      ],\n      \"name\": {\n        \"en_GB\": \"Some text\"\n      },\n      \"terms\": [\n        {\n          \"locale\": \"string\",\n          \"pureId\": 5402,\n          \"text\": \"string\"\n        },\n        {\n          \"locale\": \"string\",\n          \"pureId\": 1485,\n          \"text\": \"string\"\n        }\n      ],\n      \"inverseDocumentFrequency\": 3656.77121958773,\n      \"identifiers\": [\n        {\n          \"typeDiscriminator\": \"string\"\n        },\n        {\n          \"typeDiscriminator\": \"string\"\n        }\n      ],\n      \"systemName\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4eeb441e-9810-40a3-bec6-fbc31efb1c47",
+          "name": "A list of allowed locales in localized strings",
+          "request": {
+            "name": "A list of allowed locales in localized strings",
+            "description": {
+              "content": "Get a list of allowed locales that can be used when submitting localized string entities.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "concepts",
+                "allowed-locales"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "12add0c3-8b54-42dc-a8c8-6cd5a607a378",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "concepts",
+                    "allowed-locales"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"locales\": \"/vd_VD/\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a4034ea2-aa25-482e-bc6d-190211a1d3cf",
+          "name": "Query operation for concept",
+          "request": {
+            "name": "Query operation for concept",
+            "description": {
+              "content": "Lists concept in the Pure instance that matches the provided query, similar to the GET version, instead of using parameters to alter the response, an JSON document is posted with the request. The JSON document contains fields for all the parameters available for the GET version, but also additional filtering options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "concepts",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uuids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"size\": \"<integer>\",\n  \"offset\": \"<integer>\",\n  \"orderings\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"searchString\": \"<string>\",\n  \"orderBy\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "da11e8ef-004f-40d1-8cba-c583d5f7dfe7",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "concepts",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uuids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"size\": \"<integer>\",\n  \"offset\": \"<integer>\",\n  \"orderings\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"searchString\": \"<string>\",\n  \"orderBy\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 3481,\n  \"pageInformation\": {\n    \"offset\": 18,\n    \"size\": 4237\n  },\n  \"items\": [\n    {\n      \"conceptId\": \"string\",\n      \"thesaurus\": {\n        \"systemName\": \"string\",\n        \"uuid\": \"4965e02a-19fa-62d5-4b2c-d7eacefef6eb\"\n      },\n      \"pureId\": 6403,\n      \"uuid\": \"44b142d7-067f-1073-4ea7-84533586e20f\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1982-03-02T19:32:06.975Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"2007-03-10T20:48:02.426Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"parentConcepts\": [\n        {\n          \"systemName\": \"string\",\n          \"uuid\": \"10986035-ede5-d6ed-c5f5-7fab1d5433a6\"\n        },\n        {\n          \"systemName\": \"string\",\n          \"uuid\": \"fb81c56e-d85a-890d-b902-a629378fb8cb\"\n        }\n      ],\n      \"name\": {\n        \"en_GB\": \"Some text\"\n      },\n      \"terms\": [\n        {\n          \"locale\": \"string\",\n          \"pureId\": 6807,\n          \"text\": \"string\"\n        },\n        {\n          \"locale\": \"string\",\n          \"pureId\": 4197,\n          \"text\": \"string\"\n        }\n      ],\n      \"inverseDocumentFrequency\": 5024.19363951274,\n      \"identifiers\": [\n        {\n          \"typeDiscriminator\": \"string\"\n        },\n        {\n          \"typeDiscriminator\": \"string\"\n        }\n      ],\n      \"systemName\": \"string\"\n    },\n    {\n      \"conceptId\": \"string\",\n      \"thesaurus\": {\n        \"systemName\": \"string\",\n        \"uuid\": \"51b72322-3cbd-9570-99e2-38788b39a693\"\n      },\n      \"pureId\": 6037,\n      \"uuid\": \"3868bcef-de54-8bf2-37c3-f778ab274980\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1987-10-07T08:25:31.260Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1960-01-03T23:37:26.650Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"parentConcepts\": [\n        {\n          \"systemName\": \"string\",\n          \"uuid\": \"b2950fb1-3cfb-7431-3a90-7714a527ee11\"\n        },\n        {\n          \"systemName\": \"string\",\n          \"uuid\": \"1f32cfb4-45ce-282b-b099-fbfa22f13436\"\n        }\n      ],\n      \"name\": {\n        \"en_GB\": \"Some text\"\n      },\n      \"terms\": [\n        {\n          \"locale\": \"string\",\n          \"pureId\": 7239,\n          \"text\": \"string\"\n        },\n        {\n          \"locale\": \"string\",\n          \"pureId\": 6260,\n          \"text\": \"string\"\n        }\n      ],\n      \"inverseDocumentFrequency\": 5380.620833098463,\n      \"identifiers\": [\n        {\n          \"typeDiscriminator\": \"string\"\n        },\n        {\n          \"typeDiscriminator\": \"string\"\n        }\n      ],\n      \"systemName\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eb111a89-8f30-4e26-a55a-353f88403160",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "concepts",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uuids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"size\": \"<integer>\",\n  \"offset\": \"<integer>\",\n  \"orderings\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"searchString\": \"<string>\",\n  \"orderBy\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1224,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "08a7719c-2ebe-419a-b4d0-aa068fae491d",
+          "name": "Get concept",
+          "request": {
+            "name": "Get concept",
+            "description": {
+              "content": "Get concept with specific UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "concepts",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the desired concept"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e4b1bb28-e03e-4585-a054-4931ba9307c8",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "concepts",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired concept"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"conceptId\": \"string\",\n  \"thesaurus\": {\n    \"systemName\": \"string\",\n    \"uuid\": \"d346129f-ff36-0429-95a7-66898cfbf63b\"\n  },\n  \"pureId\": 510,\n  \"uuid\": \"08ad29f1-eb5a-db1f-5c57-6c53c621904b\",\n  \"createdBy\": \"string\",\n  \"createdDate\": \"1997-04-22T02:13:24.586Z\",\n  \"modifiedBy\": \"string\",\n  \"modifiedDate\": \"1957-10-27T03:39:30.580Z\",\n  \"portalUrl\": \"string\",\n  \"prettyUrlIdentifiers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"previousUuids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"version\": \"string\",\n  \"parentConcepts\": [\n    {\n      \"systemName\": \"string\",\n      \"uuid\": \"7605c75c-562d-1bf8-8eb7-03eecacaf8ff\"\n    },\n    {\n      \"systemName\": \"string\",\n      \"uuid\": \"b1afb116-bb5a-2a2b-bcae-9581a5e3ec6e\"\n    }\n  ],\n  \"name\": {\n    \"en_GB\": \"Some text\"\n  },\n  \"terms\": [\n    {\n      \"locale\": \"string\",\n      \"pureId\": 8377,\n      \"text\": \"string\"\n    },\n    {\n      \"locale\": \"string\",\n      \"pureId\": 8032,\n      \"text\": \"string\"\n    }\n  ],\n  \"inverseDocumentFrequency\": 2463.3002921716197,\n  \"identifiers\": [\n    {\n      \"typeDiscriminator\": \"string\"\n    },\n    {\n      \"typeDiscriminator\": \"string\"\n    }\n  ],\n  \"systemName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e5ef6fb6-509a-4f02-8adb-c4c88c39cd47",
+              "name": "The requested content have changed UUID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "concepts",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired concept"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Moved Permanently",
+              "code": 301,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81668327-bc44-413e-addb-f0f5fb6bb0e8",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "concepts",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired concept"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1224,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://research.vu.nl/ws/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ba0625f6-74aa-47ff-8265-bff64bfcc83b",
+    "name": "Pure activity concept API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Pure API provides a secure and complete web services API for using and managing research information data in Pure. The API enables a broad range of use-cases for interacting with research information, from anonymous Open Data scenarios to enabling the next generation Pure admin.\n\nContact Support:\n Email: pure-support@elsevier.com",
+      "type": "text/plain"
+    }
+  }
+}
