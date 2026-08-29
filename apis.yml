@@ -550,6 +550,9 @@ apis:
     url: >-
       https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
 common:
+  - type: CapabilityMap
+    url: capabilities/vrije-universiteit-amsterdam-capability-edges.yml
+    name: Vrije Universiteit Amsterdam Business Capability Map
   - type: AgenticAccess
     url: agentic-access/vrije-universiteit-amsterdam-agentic-access.yml
   - type: DomainSecurity
