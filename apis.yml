@@ -1,582 +1,340 @@
 ---
 aid: vrije-universiteit-amsterdam
 name: Vrije Universiteit Amsterdam
+x-type: university
+x-category: Public Research University
 description: >-
-  Vrije Universiteit Amsterdam (VU Amsterdam) is a public research university in
-  the Netherlands, ranked #221 in the QS World University Rankings 2025. Like
-  most universities, VU Amsterdam does not operate a centralized public developer
-  portal. Its programmatic footprint is concentrated in research-infrastructure
-  systems: the VU Research Portal (research.vu.nl), an Elsevier Pure instance that
-  exposes a live OAI-PMH harvesting endpoint and a Pure REST web service, and
-  research data published through DataverseNL. The University Library maintains an
-  active public GitHub organization (ubvu) of open-science tooling. Most teaching,
-  student-information, and identity systems are internal and not publicly
-  documented.
+  Vrije Universiteit Amsterdam (VU Amsterdam) is a public research university in the Netherlands,
+  founded in 1880 and ranked #221 in the QS World University Rankings 2025. It operates no public
+  developer program, no API portal, and no first-party API contract: every OpenAPI previously
+  attributed to VU in this repository was Elsevier's Pure API v5.34.3 (contact
+  pure-support@elsevier.com), the same product contract at least nine other universities ship, and
+  it has been removed. What VU genuinely operates and publishes machine-readably is two protocol
+  surfaces on its own domain — a live OAI-PMH 2.0 repository interface at research.vu.nl/ws/oai
+  serving OpenAIRE CERIF and Dublin Core, administered by the University Library, and a signed
+  SAML 2.0 identity-provider metadata document at stsfed.login.vu.nl published into the SURFconext
+  national federation and onward to eduGAIN. Everything else programmable under a vu.nl subdomain
+  is a vendor product VU is the tenant of: the Elsevier Pure REST web service, VU Yoda (Utrecht
+  University software maintained by SURF for VU), Instructure Canvas, and Semestry MyTimetable —
+  all credential-gated. Research data is also published to the national DataverseNL service. The
+  University Library GitHub organisation (ubvu) is the institution's active open-source presence
+  with 90 public repositories; the official VU GitHub organisation has none.
 type: Index
 deliveryModel:
   model: saas
   open_source: false
-  commercial: true
+  commercial: false
   callable_host: true
   label: Hosted service · you call their endpoint
-  confidence: high
+  confidence: medium
   source:
-  - openapi
-  - pricing
-  generated: '2026-08-28'
-  method: derived
+  - probe
+  generated: '2026-08-30'
+  method: probed
 accessModel:
   pricing: free
-  onboarding: self-serve
+  onboarding: institutional
   trial: false
-  try_now: true
+  try_now: false
   public: false
-  label: Free · Self-serve signup
+  label: Free · Institutional affiliation required for all but the harvesting endpoint
   confidence: high
   source:
-  - plans
-  - authentication
-  generated: '2026-07-22'
-  method: derived
+  - probe
+  generated: '2026-08-30'
+  method: probed
 position: Consumer
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/vrije-universiteit-amsterdam.png
 url: https://raw.githubusercontent.com/api-evangelist/vrije-universiteit-amsterdam/refs/heads/main/apis.yml
 tags:
-  - Education
-  - Higher Education
-  - University
-  - Netherlands
-  - Research
-  - Open Data
-  - Repository
+- University
+- Higher Education
+- Education
+- Netherlands
+- Europe
+- Research
+- Research Data
+- Research Repository
+- Identity Federation
+- OAI-PMH
+- Open Access
+- Public Research University
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-30'
 specificationVersion: '0.23'
+x-enrichment:
+  pipeline: pipeline-university.md
+  run: '2026-08-30'
+  operator_axis_settled: true
+  removed_vendor_contracts: 96
+  note: >-
+    Re-profiled under the university pipeline. The 26 refined OpenAPIs and their 70 derived
+    artifacts were a single Elsevier Pure contract split by tag; all were removed as
+    shared_contract. No contract was saved in their place, because VU authors none.
+x-coverage:
+  state: gated
+  reason: tenant_only
+  detail: >-
+    Two institution-operated machine-readable surfaces were reached and read in full — the
+    OAI-PMH 2.0 endpoint at research.vu.nl/ws/oai (Identify, ListMetadataFormats, ListSets and
+    a 108KB ListRecords harvest all returned 200) and the signed SAML 2.0 IdP metadata at
+    stsfed.login.vu.nl (200, 116,822 bytes, also present in the SURFconext national feed).
+    Beyond those two, every programmable surface under a vu.nl subdomain is a vendor product
+    VU is a tenant of, and every one of them is credential-gated: the Elsevier Pure REST web
+    service (research.vu.nl/ws/api/524/persons -> 401), Instructure Canvas
+    (canvas.vu.nl/api/v1/accounts -> 401), Semestry MyTimetable (rooster.vu.nl/api/ -> 401)
+    and VU Yoda's WebDAV endpoint (data.yoda.vu.nl -> 401). The two Yoda public hosts and
+    DataverseNL sit behind an Anubis bot challenge that returns HTTP 200 with a
+    "checking your connection" body rather than content, and research.vu.nl HTML pages sit
+    behind a Cloudflare challenge (403) even though its /ws/ protocol endpoints are open.
+    No developer portal, no llms.txt, no security.txt and no institution-authored API
+    contract exists at any probed location. This profile is thin because the institution is a
+    buyer, not a producer — not because the surface was unreachable.
+  evidence:
+  - url: https://research.vu.nl/ws/oai?verb=Identify
+    status: 200
+  - url: https://research.vu.nl/ws/oai?verb=ListSets
+    status: 200
+  - url: https://stsfed.login.vu.nl/FederationMetadata/2007-06/FederationMetadata.xml
+    status: 200
+  - url: https://metadata.surfconext.nl/idps-metadata.xml
+    status: 200
+  - url: https://research.vu.nl/ws/api/524/persons
+    status: 401
+  - url: https://canvas.vu.nl/api/v1/accounts
+    status: 401
+  - url: https://rooster.vu.nl/api/
+    status: 401
+  - url: https://data.yoda.vu.nl/
+    status: 401
+  - url: https://portal.yoda.vu.nl/
+    status: 200
+  - url: https://publication.yoda.vu.nl/
+    status: 200
+  - url: https://dataverse.nl/api/info/version
+    status: 200
+  - url: https://research.vu.nl/en/organisations
+    status: 403
+  - url: https://vu.nl/llms.txt
+    status: 404
+  - url: https://vu.nl/.well-known/security.txt
+    status: 404
 apis:
 - aid: vrije-universiteit-amsterdam:research-portal-oai
   name: VU Research Portal OAI-PMH
+  x-operator: institution
   description: >-
-    OAI-PMH 2.0 metadata harvesting endpoint for the Vrije Universiteit Amsterdam Repository, served by
-    the institution's Elsevier Pure research information system at research.vu.nl. Confirmed live: an
-    Identify request returns the repository name "Vrije Universiteit Amsterdam Repository" with admin
-    contact pure.ub@vu.nl. Supports standard OAI-PMH verbs (Identify, ListMetadataFormats, ListRecords,
-    etc.) for harvesting publications, persons, organizations, and projects.
+    OAI-PMH 2.0 metadata harvesting interface for the Vrije Universiteit Amsterdam Repository,
+    served from the institution's own domain and administered by the VU University Library
+    (adminEmail pure.ub@vu.nl). Verified live 2026-08-30: Identify returns repositoryName
+    "Vrije Universiteit Amsterdam Repository", earliestDatestamp 2017-02-05, granularity
+    YYYY-MM-DDThh:mm:ssZ and an OpenAIRE CERIF Service description claiming compatibility 1.1.1.
+    ListMetadataFormats advertises oai_dc and oai_cerif_openaire; ListSets advertises seven
+    openaire_cris_* sets plus per-year publication sets back to 1880; a ListRecords harvest of
+    openaire_cris_persons returned 108KB of CERIF records. The repository software underneath is
+    Elsevier Pure, but OAI-PMH is an open protocol on a VU host, so the surface is the
+    institution's even though the product is not. No OpenAPI is held for it because VU publishes
+    none and this pipeline does not generate contracts on an institution's behalf.
   humanURL: https://research.vu.nl/
   baseURL: https://research.vu.nl/ws/oai
   tags:
-  - Research
-  - Repository
   - OAI-PMH
-  - Metadata
-  - Open Data
-  - Harvesting
+  - Research Repository
+  - Metadata Harvesting
+  - Open Access
+  - OpenAIRE
+  - CERIF
+  properties:
+  - type: Conformance
+    url: conformance/vrije-universiteit-amsterdam-conformance.yml
+  - type: Documentation
+    url: http://www.openarchives.org/OAI/openarchivesprotocol.html
+- aid: vrije-universiteit-amsterdam:identity-federation
+  name: VU Amsterdam SAML 2.0 identity provider (SURFconext / eduGAIN)
+  x-operator: institution
+  description: >-
+    Vrije Universiteit Amsterdam operates its own SAML 2.0 identity provider on Microsoft ADFS and
+    publishes signed, machine-readable federation metadata for it. entityID
+    http://stsfed.login.vu.nl/adfs/services/trust; SingleSignOnService at
+    https://stsfed.login.vu.nl/adfs/ls/; the metadata document carries both IDPSSODescriptor and
+    SPSSODescriptor roles and supports SAML 2.0 alongside WS-Federation and WS-Trust. The same
+    entity appears in the SURFconext national IdP feed with mdui:DisplayName "Vrije Universiteit
+    Amsterdam" and shibmd:Scope vu.nl, from where SURFconext publishes it onward to eduGAIN. This
+    is the surface a university operates by definition, it is genuinely first-party, and it was
+    entirely absent from the June 2026 profile of this institution.
+  humanURL: https://stsfed.login.vu.nl/adfs/ls/idpinitiatedsignon
+  baseURL: https://stsfed.login.vu.nl/adfs/ls/
+  tags:
+  - Identity Federation
+  - SAML
+  - SSO
+  - SURFconext
+  - eduGAIN
+  - ADFS
+  properties:
+  - type: IdentityFederation
+    url: https://stsfed.login.vu.nl/FederationMetadata/2007-06/FederationMetadata.xml
+  - type: Conformance
+    url: conformance/vrije-universiteit-amsterdam-conformance.yml
+  - type: Documentation
+    url: https://metadata.surfconext.nl/idps-metadata.xml
+- aid: vrije-universiteit-amsterdam:pure-web-service-deployment
+  name: Elsevier Pure REST web service — VU Amsterdam deployment
+  x-operator: tenant
+  description: >-
+    VU Amsterdam's tenancy of the Elsevier Pure research information system, reachable at
+    research.vu.nl/ws/api and API-key gated (GET /524/persons returns HTTP 401). The contract is
+    Elsevier's, not VU's: info.title "Pure API", version 5.34.3, contact pure-support@elsevier.com,
+    and at least nine other universities in this catalog ship the identical document. The 26
+    per-tag OpenAPIs and 70 derived artifacts that used to sit in this repository under VU's name
+    were that one contract, and were removed on 2026-08-30. The relationship is recorded here
+    because it is a real institutional fact — VU's research information, VU's host — but the
+    engineering, and therefore the contract, belongs to Elsevier.
+  humanURL: https://research.vu.nl/
+  baseURL: https://research.vu.nl/ws/api
+  tags:
+  - Research Information
+  - Elsevier Pure
+  - Tenant Deployment
+  - CRIS
   properties:
   - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/en_US/data-sources-and-integrations/what-is-the-oai-base-url
-- aid: vrije-universiteit-amsterdam:dataverse-nl
-  name: VU Amsterdam research data on DataverseNL
+    url: https://research.vu.nl/ws/api/openapi.yaml
+  - type: Authentication
+    url: https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
+- aid: vrije-universiteit-amsterdam:yoda
+  name: VU Yoda research data repository
+  x-operator: tenant
   description: >-
-    Vrije Universiteit Amsterdam publishes and shares research datasets through DataverseNL, the national
-    Dataverse repository service. The Dataverse software exposes a documented Native and Search REST API
-    for programmatic access to dataverses, datasets, and files. VU's collection is hosted at dataverse.nl/dataverse/vuamsterdam
-    (HTTP 200 confirmed).
+    VU Amsterdam's research data management and publication platform, running at
+    portal.yoda.vu.nl. Yoda is open-source iRODS-based software built by Utrecht University and,
+    per its own DataCite registry record, "maintained by SURF for the Vrije Universiteit
+    Amsterdam" — an institution-specific subdomain on a platform someone else operates, which
+    makes VU the tenant rather than the operator. The portal returns HTTP 200 and gates behind
+    /user/gate; the WebDAV data endpoint at data.yoda.vu.nl returns HTTP 401; published datasets
+    land at publication.yoda.vu.nl, which currently answers every request with an Anubis bot
+    challenge. Registered with DataCite as repository client DELFT.VUDATA and actively minting —
+    171 DOIs as of 2026-08-30.
+  humanURL: https://portal.yoda.vu.nl
+  baseURL: https://data.yoda.vu.nl
+  tags:
+  - Research Data
+  - Research Repository
+  - Yoda
+  - iRODS
+  - WebDAV
+  - DataCite
+  - Tenant Deployment
+  properties:
+  - type: Documentation
+    url: https://rdm.vu.nl/tools/yoda/index.html
+  - type: Conformance
+    url: conformance/vrije-universiteit-amsterdam-conformance.yml
+- aid: vrije-universiteit-amsterdam:dataverse-nl
+  name: VU Amsterdam collection on DataverseNL
+  x-operator: tenant
+  description: >-
+    Vrije Universiteit Amsterdam publishes research datasets into DataverseNL, the shared national
+    Dataverse service, under the collection dataverse.nl/dataverse/vuamsterdam. The REST API at
+    dataverse.nl/api is the Dataverse project's contract on a national host that many Dutch
+    institutions share, so no spec is held here under VU's name. As of 2026-08-30 the whole
+    dataverse.nl host answers with an Anubis bot challenge — HTTP 200 carrying a
+    "checking your connection" interstitial rather than API output — so the deployment could not
+    be read, only confirmed to exist.
   humanURL: https://dataverse.nl/dataverse/vuamsterdam
   baseURL: https://dataverse.nl/api
   tags:
   - Research Data
-  - Repository
   - Dataverse
-  - Open Data
-  - REST
+  - National Service
+  - Tenant Deployment
   properties:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-activity-api
-  name: Vrije Universiteit Amsterdam activity API
-  description: The activity API from Vrije Universiteit Amsterdam — 38 operation(s) for activity.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - Activity
-  tags_raw:
-  - activity
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-activity-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-application-api
-  name: Vrije Universiteit Amsterdam application API
-  description: The application API from Vrije Universiteit Amsterdam — 36 operation(s) for application.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - Application
-  tags_raw:
-  - application
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-application-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-authorcollaboration-api
-  name: Vrije Universiteit Amsterdam authorCollaboration API
+- aid: vrije-universiteit-amsterdam:canvas
+  name: VU Amsterdam Canvas LMS API
+  x-operator: tenant
   description: >-
-    The authorCollaboration API from Vrije Universiteit Amsterdam — 9 operation(s) for authorcollaboration.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags: []
-  tags_raw:
-  - authorCollaboration
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-authorcollaboration-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-award-api
-  name: Vrije Universiteit Amsterdam award API
-  description: The award API from Vrije Universiteit Amsterdam — 35 operation(s) for award.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
+    Instructure Canvas deployed for VU Amsterdam at canvas.vu.nl. The Canvas REST API is live and
+    credential-gated — GET /api/v1/accounts returns HTTP 401 with a JSON body — and the sign-in
+    page renders. The contract is Instructure's and is catalogued against Instructure; recorded
+    here only as the institution's learning-platform tenancy. Canvas's LTI certification is
+    Instructure's, not VU's, and is deliberately not recorded as institutional conformance.
+  humanURL: https://canvas.vu.nl/
+  baseURL: https://canvas.vu.nl/api/v1
   tags:
-  - award
+  - Learning Management
+  - Canvas
+  - Instructure
+  - Tenant Deployment
   properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-award-api-openapi.yml
   - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-classificationscheme-api
-  name: Vrije Universiteit Amsterdam classificationScheme API
+    url: https://canvas.instructure.com/doc/api/
+- aid: vrije-universiteit-amsterdam:timetable
+  name: VU Amsterdam timetable (MyTimetable)
+  x-operator: tenant
   description: >-
-    The classificationScheme API from Vrije Universiteit Amsterdam — 7 operation(s) for classificationscheme.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags: []
-  tags_raw:
-  - classificationScheme
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-classificationscheme-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-concept-api
-  name: Vrije Universiteit Amsterdam concept API
-  description: The concept API from Vrije Universiteit Amsterdam — 4 operation(s) for concept.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
+    VU Amsterdam's class timetable at rooster.vu.nl, running Semestry MyTimetable (the vendor is
+    named in an HTML comment in the served page). A JSON REST API is live behind authentication —
+    /api/, /api/rest/v1/ and /api/rest/v1/info all return HTTP 401 with a Spring-style JSON error
+    body — and no public schedule contract or ICS feed was reachable without credentials. This is
+    the closest thing VU has to a course/timetable surface, and it is a vendor product on a VU
+    subdomain, not an institution-built API.
+  humanURL: https://rooster.vu.nl/schedule
+  baseURL: https://rooster.vu.nl/api
   tags:
-  - concept
+  - Timetable
+  - Course Catalog
+  - MyTimetable
+  - Semestry
+  - Tenant Deployment
   properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-concept-api-openapi.yml
   - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-course-api
-  name: Vrije Universiteit Amsterdam course API
-  description: The course API from Vrije Universiteit Amsterdam — 27 operation(s) for course.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - course
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-course-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-dataset-api
-  name: Vrije Universiteit Amsterdam dataSet API
-  description: The dataSet API from Vrije Universiteit Amsterdam — 29 operation(s) for dataset.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - Dataset
-  tags_raw:
-  - dataSet
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-dataset-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-equipment-api
-  name: Vrije Universiteit Amsterdam equipment API
-  description: The equipment API from Vrije Universiteit Amsterdam — 26 operation(s) for equipment.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - Equipment
-  tags_raw:
-  - equipment
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-equipment-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-event-api
-  name: Vrije Universiteit Amsterdam event API
-  description: The event API from Vrije Universiteit Amsterdam — 21 operation(s) for event.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - Event
-  tags_raw:
-  - event
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-event-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-externalorganization-api
-  name: Vrije Universiteit Amsterdam externalOrganization API
-  description: >-
-    The externalOrganization API from Vrije Universiteit Amsterdam — 29 operation(s) for externalorganization.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags: []
-  tags_raw:
-  - externalOrganization
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-externalorganization-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-externalperson-api
-  name: Vrije Universiteit Amsterdam externalPerson API
-  description: >-
-    The externalPerson API from Vrije Universiteit Amsterdam — 22 operation(s) for externalperson.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags: []
-  tags_raw:
-  - externalPerson
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-externalperson-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-fundingopportunity-api
-  name: Vrije Universiteit Amsterdam fundingOpportunity API
-  description: >-
-    The fundingOpportunity API from Vrije Universiteit Amsterdam — 21 operation(s) for fundingopportunity.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags: []
-  tags_raw:
-  - fundingOpportunity
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-fundingopportunity-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-journal-api
-  name: Vrije Universiteit Amsterdam journal API
-  description: The journal API from Vrije Universiteit Amsterdam — 22 operation(s) for journal.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - journal
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-journal-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-keywordgroupconfiguration-api
-  name: Vrije Universiteit Amsterdam keywordGroupConfiguration API
-  description: >-
-    The keywordGroupConfiguration API from Vrije Universiteit Amsterdam — 7 operation(s) for keywordgroupconfiguration.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags: []
-  tags_raw:
-  - keywordGroupConfiguration
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-keywordgroupconfiguration-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-organization-api
-  name: Vrije Universiteit Amsterdam organization API
-  description: >-
-    The organization API from Vrije Universiteit Amsterdam — 33 operation(s) for organization.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - Organization
-  tags_raw:
-  - organization
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-organization-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-person-api
-  name: Vrije Universiteit Amsterdam person API
-  description: The person API from Vrije Universiteit Amsterdam — 57 operation(s) for person.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - Persons
-  tags_raw:
-  - person
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-person-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-pressmedia-api
-  name: Vrije Universiteit Amsterdam pressMedia API
-  description: The pressMedia API from Vrije Universiteit Amsterdam — 24 operation(s) for pressmedia.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags: []
-  tags_raw:
-  - pressMedia
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-pressmedia-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-prize-api
-  name: Vrije Universiteit Amsterdam prize API
-  description: The prize API from Vrije Universiteit Amsterdam — 28 operation(s) for prize.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - prize
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-prize-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-project-api
-  name: Vrije Universiteit Amsterdam project API
-  description: The project API from Vrije Universiteit Amsterdam — 33 operation(s) for project.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - Project
-  tags_raw:
-  - project
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-project-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-publisher-api
-  name: Vrije Universiteit Amsterdam publisher API
-  description: The publisher API from Vrije Universiteit Amsterdam — 18 operation(s) for publisher.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - Publishers
-  tags_raw:
-  - publisher
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-publisher-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-researchoutput-api
-  name: Vrije Universiteit Amsterdam researchOutput API
-  description: >-
-    The researchOutput API from Vrije Universiteit Amsterdam — 66 operation(s) for researchoutput.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags: []
-  tags_raw:
-  - researchOutput
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-researchoutput-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-role-api
-  name: Vrije Universiteit Amsterdam role API
-  description: The role API from Vrije Universiteit Amsterdam — 2 operation(s) for role.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - Role
-  tags_raw:
-  - role
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-role-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-studentthesis-api
-  name: Vrije Universiteit Amsterdam studentThesis API
-  description: >-
-    The studentThesis API from Vrije Universiteit Amsterdam — 26 operation(s) for studentthesis.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags: []
-  tags_raw:
-  - studentThesis
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-studentthesis-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-thesaurus-api
-  name: Vrije Universiteit Amsterdam thesaurus API
-  description: The thesaurus API from Vrije Universiteit Amsterdam — 5 operation(s) for thesaurus.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - thesaurus
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-thesaurus-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-- aid: vrije-universiteit-amsterdam:vrije-universiteit-amsterdam-user-api
-  name: Vrije Universiteit Amsterdam user API
-  description: The user API from Vrije Universiteit Amsterdam — 7 operation(s) for user.
-  humanURL: https://research.vu.nl/
-  baseURL: https://research.vu.nl/ws/oai
-  tags:
-  - User
-  tags_raw:
-  - user
-  properties:
-  - type: OpenAPI
-    url: openapi/vrije-universiteit-amsterdam-user-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
-  - type: Authentication
-    url: >-
-      https://helpcenter.pure.elsevier.com/web-service/harvesting-content-from-the-pure-web-services-changes
+    url: https://rooster.vu.nl/schedule
 common:
-  - type: CapabilityMap
-    url: capabilities/vrije-universiteit-amsterdam-capability-edges.yml
-    name: Vrije Universiteit Amsterdam Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/vrije-universiteit-amsterdam-agentic-access.yml
-  - type: DomainSecurity
-    url: security/vrije-universiteit-amsterdam-domain-security.yml
-  - type: Authentication
-    url: authentication/vrije-universiteit-amsterdam-authentication.yml
-  - type: Website
-    url: https://vu.nl/en
-  - type: GitHub
-    url: https://github.com/Vrije-Universiteit-Amsterdam
-  - type: SourceCode
-    url: https://github.com/ubvu
-  - type: LinkedIn
-    url: https://www.linkedin.com/school/vrije-universiteit-amsterdam/
-  - type: Twitter
-    url: https://twitter.com/VUamsterdam
-  - type: Plans
-    url: plans/vrije-universiteit-amsterdam-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/vrije-universiteit-amsterdam-rate-limits.yml
-  - type: FinOps
-    url: finops/vrije-universiteit-amsterdam-finops.yml
-  - type: Review
-    url: review.yml
+- type: Website
+  url: https://vu.nl/en
+- type: ResearchRepository
+  url: https://research.vu.nl/
+- type: OpenData
+  url: https://portal.yoda.vu.nl
+- type: CourseCatalog
+  url: https://studiegids.vu.nl/
+- type: IdentityFederation
+  url: https://stsfed.login.vu.nl/FederationMetadata/2007-06/FederationMetadata.xml
+- type: Documentation
+  url: https://rdm.vu.nl/
+- type: AIPolicy
+  url: https://vu.nl/en/education/more-about/teaching-and-ai
+- type: AITooling
+  url: https://vu.nl/en/student/examinations/generative-ai-your-use-our-expectations
+- type: GitHubOrganization
+  url: https://github.com/ubvu
+- type: TermsOfService
+  url: https://vu.nl/en/about-vu/more-about/disclaimer
+- type: PrivacyPolicy
+  url: https://vu.nl/en/about-vu/more-about/privacy-statement-vrije-universiteit-amsterdam
+- type: Support
+  url: https://vu.nl/en/about-vu/more-about/contact
+- type: Blog
+  url: https://vu.nl/en/news
+- type: LinkedIn
+  url: https://www.linkedin.com/school/vrije-universiteit-amsterdam/
+- type: Twitter
+  url: https://twitter.com/VUamsterdam
+- type: Conformance
+  url: conformance/vrije-universiteit-amsterdam-conformance.yml
+- type: DomainSecurity
+  url: security/vrije-universiteit-amsterdam-domain-security.yml
+- type: Plans
+  url: plans/vrije-universiteit-amsterdam-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/vrije-universiteit-amsterdam-rate-limits.yml
+- type: FinOps
+  url: finops/vrije-universiteit-amsterdam-finops.yml
+- type: Review
+  url: review.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
