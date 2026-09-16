@@ -171,6 +171,13 @@ apis:
   - SSO
   - SURFconext
   - eduGAIN
+  - AD FS
+  tags_raw:
+  - Identity Federation
+  - SAML
+  - SSO
+  - SURFconext
+  - eduGAIN
   - ADFS
   properties:
   - type: IdentityFederation
