@@ -204,6 +204,11 @@ apis:
   - Research Information
   - Elsevier Pure
   - Tenant Deployment
+  - CRI
+  tags_raw:
+  - Research Information
+  - Elsevier Pure
+  - Tenant Deployment
   - CRIS
   properties:
   - type: Documentation
