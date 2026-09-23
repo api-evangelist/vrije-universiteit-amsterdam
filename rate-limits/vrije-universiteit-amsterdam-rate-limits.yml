@@ -4,7 +4,7 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Vrije Universiteit Amsterdam
 providerId: vrije-universiteit-amsterdam
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-30'
 reconciled: false
 tags:
 - Education
@@ -12,10 +12,12 @@ tags:
 - University
 - Rate Limiting
 description: >-
-  Vrije Universiteit Amsterdam does not publish a unified public rate-limit table across its APIs. Open
-  metadata and harvesting endpoints (OAI-PMH, IIIF, library) may throttle large-scale
-  or automated harvesting; clients should harvest politely, honor Retry-After, and
-  contact the relevant service for bulk access.
+  Vrije Universiteit Amsterdam publishes no rate-limit table. The one openly callable
+  institution-operated endpoint is the OAI-PMH interface at research.vu.nl/ws/oai; its host
+  advertises Crawl-Delay 5 in robots.txt and no numeric API quota. Every other programmable
+  surface under a vu.nl subdomain is a credential-gated vendor deployment (Elsevier Pure,
+  Canvas, MyTimetable, Yoda) whose limits are the vendor's to publish, not VU's. Harvest
+  politely, honor Retry-After, and contact the service owner for bulk access.
 notes: Confirm per-service limits with each API's documentation; harvest responsibly.
 sources:
 - https://raw.githubusercontent.com/api-evangelist/vrije-universiteit-amsterdam/refs/heads/main/apis.yml

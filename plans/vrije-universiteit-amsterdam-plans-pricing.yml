@@ -4,7 +4,7 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Vrije Universiteit Amsterdam
 providerId: vrije-universiteit-amsterdam
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-30'
 reconciled: false
 tags:
 - Education
@@ -12,11 +12,13 @@ tags:
 - University
 - Plans
 description: >-
-  Vrije Universiteit Amsterdam is a non-commercial higher-education institution; its APIs are not sold
-  as a commercial product. Public APIs (library, repository, course, and open-metadata
-  interfaces) are offered free of charge, typically for non-commercial use. Most
-  administrative and identity APIs are not openly self-service and require institutional
-  affiliation, credentials, or federation membership rather than a paid plan.
+  Vrije Universiteit Amsterdam is a non-commercial higher-education institution and sells no API
+  access. Nothing here is a product with a price. The OAI-PMH harvesting interface at
+  research.vu.nl/ws/oai and the SAML federation metadata at stsfed.login.vu.nl are open and free
+  to anyone. Everything else — the Elsevier Pure REST web service, Canvas, MyTimetable, Yoda —
+  is gated by institutional affiliation or a vendor-issued key, not by payment, and the
+  commercial relationship in each case is between VU and the vendor, not between VU and a
+  developer.
 notes: >-
   No published per-seat or per-call commercial pricing. "Free / Open" reflects open
   public endpoints; "Affiliation / Credentialed" reflects access gated by institutional

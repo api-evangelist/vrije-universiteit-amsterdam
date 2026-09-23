@@ -1,0 +1,127 @@
+specification: API Evangelist Domain Standard Conformance
+specificationVersion: '0.1'
+provider: Vrije Universiteit Amsterdam
+providerId: vrije-universiteit-amsterdam
+regime: education
+generated: '2026-08-30'
+method: probed
+source: >-
+  Live HTTP probes of Vrije Universiteit Amsterdam hosts and of the public registries that
+  publish machine-readable records about the institution (SURFconext SAML metadata feed,
+  DataCite REST API), run 2026-08-30 from a browser User-Agent.
+description: >-
+  Conformance of Vrije Universiteit Amsterdam's institution-operated surfaces against the
+  Kin Score `education` regime standards. Reward-only: a standard is recorded here only when
+  a live response from a VU-controlled host, or a public registry record naming VU, proves it.
+  Standards a vendor product happens to support are NOT recorded as the institution's
+  conformance — Canvas is LTI-certified by Instructure, not by VU.
+conformant:
+- standard: oai-pmh
+  name: Open Archives Initiative Protocol for Metadata Harvesting 2.0
+  operator: institution
+  status: live
+  endpoint: https://research.vu.nl/ws/oai
+  evidence:
+  - url: https://research.vu.nl/ws/oai?verb=Identify
+    status: 200
+    note: >-
+      Returns protocolVersion 2.0, repositoryName "Vrije Universiteit Amsterdam Repository",
+      baseURL https://research.vu.nl/ws/oai, adminEmail pure.ub@vu.nl,
+      earliestDatestamp 2017-02-05T11:41:43Z, granularity YYYY-MM-DDThh:mm:ssZ, and an
+      OpenAIRE CERIF Service description asserting compatibility 1.1.1.
+  - url: https://research.vu.nl/ws/oai?verb=ListMetadataFormats
+    status: 200
+    note: Advertises metadataPrefix oai_dc and oai_cerif_openaire (OpenAIRE CERIF profile 1.2).
+  - url: https://research.vu.nl/ws/oai?verb=ListSets
+    status: 200
+    note: >-
+      Advertises openaire_cris_publications, openaire_cris_patents, openaire_cris_persons,
+      openaire_cris_orgunits, openaire_cris_events, openaire_cris_equipments and
+      openaire_cris_products, plus persons:all and per-year publication sets back to 1880.
+  - url: https://research.vu.nl/ws/oai?verb=ListRecords&metadataPrefix=oai_cerif_openaire&set=openaire_cris_persons
+    status: 200
+    note: 108,108 bytes of CERIF Person records returned; harvesting works end to end, not just Identify.
+  notes: >-
+    The repository software underneath is Elsevier Pure, but OAI-PMH is an open protocol served
+    from a host under vu.nl and administered by the VU University Library (pure.ub@vu.nl).
+    The protocol surface is the institution's; the Pure REST contract is not.
+- standard: saml
+  name: SAML 2.0 identity federation (SURFconext / eduGAIN)
+  operator: institution
+  status: live
+  endpoint: https://stsfed.login.vu.nl/adfs/ls/
+  entity_id: http://stsfed.login.vu.nl/adfs/services/trust
+  evidence:
+  - url: https://stsfed.login.vu.nl/FederationMetadata/2007-06/FederationMetadata.xml
+    status: 200
+    note: >-
+      116,822 bytes of signed application/samlmetadata+xml published by VU's own ADFS.
+      entityID http://stsfed.login.vu.nl/adfs/services/trust; carries IDPSSODescriptor and
+      SPSSODescriptor roles; protocolSupportEnumeration urn:oasis:names:tc:SAML:2.0:protocol
+      plus WS-Federation/WS-Trust; SingleSignOnService at https://stsfed.login.vu.nl/adfs/ls/.
+  - url: https://metadata.surfconext.nl/idps-metadata.xml
+    status: 200
+    note: >-
+      SURFconext national IdP feed (1,032,474 bytes) carries exactly one entity on a vu.nl host —
+      entityID http://stsfed.login.vu.nl/adfs/services/trust, mdui:DisplayName
+      "Vrije Universiteit Amsterdam" (nl and en), shibmd:Scope vu.nl. SURFconext publishes
+      onward to eduGAIN.
+  - url: https://stsfed.login.vu.nl/adfs/ls/idpinitiatedsignon
+    status: 200
+    note: IdP-initiated sign-on page renders; the federation endpoint is serving, not parked.
+  notes: >-
+    This is the surface a university operates by definition and it was absent from the June 2026
+    profile. The implementation is Microsoft ADFS, so `shibboleth` is NOT claimed — the software
+    is not Shibboleth, only the federation it joins is Shibboleth-adjacent.
+- standard: datacite
+  name: DataCite DOI registration
+  operator: institution
+  status: live
+  evidence:
+  - url: https://api.datacite.org/clients/delft.vudata
+    status: 200
+    note: >-
+      Registered DataCite repository client DELFT.VUDATA, name "VU Yoda", url
+      https://portal.yoda.vu.nl, clientType repository, registered 2020-09-11.
+  - url: https://api.datacite.org/dois?client-id=delft.vudata
+    status: 200
+    note: 171 DOIs minted; sample 10.48338/vu01-3m1t7b resolving to publication.yoda.vu.nl.
+  - url: https://api.datacite.org/clients/yajd.tkscoo
+    status: 200
+    note: >-
+      Registered DataCite repository client YAJD.TKSCOO, name "VU Research Portal", url
+      https://research.vu.nl/, clientType repository, registered 2025-02-28.
+  - url: https://api.datacite.org/dois?client-id=yajd.tkscoo
+    status: 200
+    note: 34 DOIs minted; sample 10.71881/b6951c18-a294-4d3e-b6c2-e19baff4a1e4 on research.vu.nl.
+  notes: >-
+    Two DataCite repository clients are registered to VU Amsterdam and both are actively minting.
+    The registry records are machine-readable and name the institution directly.
+not_conformant:
+- standard: shibboleth
+  reason: >-
+    VU's IdP is Microsoft ADFS, not Shibboleth. The federation (SURFconext) is Shibboleth-adjacent
+    but the institution runs no Shibboleth software that is discoverable publicly.
+- standard: orcid
+  reason: >-
+    No ORCID identifiers found in the institution's own machine-readable output. A 108KB
+    ListRecords sample of oai_cerif_openaire person records from research.vu.nl/ws/oai contained
+    zero occurrences of "orcid" (case-insensitive). VU may hold an ORCID membership; nothing
+    public and machine-readable proves it.
+- standard: crossref
+  reason: No Crossref member or prefix record naming VU Amsterdam was found; VU mints through DataCite.
+- standard: lti
+  reason: >-
+    canvas.vu.nl is a live Instructure Canvas deployment (GET /api/v1/accounts returns HTTP 401 JSON),
+    and Canvas is LTI-certified — but that certification is Instructure's, not the institution's.
+    Not recorded as VU conformance.
+- standard: scim
+  reason: No SCIM endpoint or provisioning documentation found on any vu.nl host.
+- standard: oneroster
+  reason: Not found; OneRoster is a K-12 standard and is not expected in this deployment.
+- standard: ed-fi
+  reason: Not found; Ed-Fi is a US K-12 standard and is not expected at a Dutch university.
+- standard: caliper
+  reason: No Caliper Analytics endpoint or statement found on any vu.nl host.
+- standard: qti
+  reason: No QTI item bank or export surface found publicly.

@@ -3,8 +3,111 @@ name: Vrije Universiteit Amsterdam
 description: Vrije Universiteit Amsterdam public developer/API footprint review for APIs.json cataloging.
 url: https://raw.githubusercontent.com/api-evangelist/vrije-universiteit-amsterdam/refs/heads/main/review.yml
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-30'
 reviews:
+  - date: '2026-08-30'
+    rating: 3
+    summary: >-
+      Re-profiled under the API Evangelist university pipeline, which settles WHO OPERATES a
+      surface before saving any contract. The 26 OpenAPIs this repository held under VU's name
+      were one document: Elsevier's Pure API v5.34.3 (info.title "Pure API", contact
+      pure-support@elsevier.com), the same product contract at least nine other universities in
+      this catalog ship, split per tag by our own refine step into 26 apparent APIs and 70
+      derived artifacts. All 96 files were removed; no contract replaced them, because VU
+      authors none. What survived the ownership check, and what the June 2026 review missed, is
+      two genuinely institution-operated machine-readable surfaces. The OAI-PMH 2.0 endpoint at
+      research.vu.nl/ws/oai is not just present but fully harvestable — Identify,
+      ListMetadataFormats, ListSets and a 108KB ListRecords pull of OpenAIRE CERIF person
+      records all returned 200. And VU publishes signed SAML 2.0 identity-provider metadata at
+      stsfed.login.vu.nl (entityID http://stsfed.login.vu.nl/adfs/services/trust), carried in
+      the SURFconext national IdP feed with scope vu.nl and republished to eduGAIN; the June
+      review concluded "no identity API was found", which was wrong. Two DataCite repository
+      clients are registered to VU and actively minting (DELFT.VUDATA "VU Yoda", 171 DOIs;
+      YAJD.TKSCOO "VU Research Portal", 34 DOIs). Three further tenant surfaces were found that
+      the June review also missed: VU Yoda at portal.yoda.vu.nl (Utrecht University software
+      maintained by SURF for VU), Instructure Canvas at canvas.vu.nl, and Semestry MyTimetable
+      at rooster.vu.nl — all live, all credential-gated, all vendor contracts. Rating moves
+      2 -> 3 on discovered surface, not on published contract: VU still operates no developer
+      program, no API portal, no llms.txt and no security.txt.
+    endpoints:
+      - url: https://research.vu.nl/ws/oai?verb=Identify
+        status: 200
+        note: >-
+          repositoryName "Vrije Universiteit Amsterdam Repository", adminEmail pure.ub@vu.nl,
+          earliestDatestamp 2017-02-05, OpenAIRE CERIF compatibility 1.1.1.
+      - url: https://research.vu.nl/ws/oai?verb=ListSets
+        status: 200
+        note: Seven openaire_cris_* sets plus per-year publication sets back to 1880.
+      - url: https://research.vu.nl/ws/oai?verb=ListRecords&metadataPrefix=oai_cerif_openaire&set=openaire_cris_persons
+        status: 200
+        note: 108,108 bytes of CERIF Person records; harvesting works end to end. Zero ORCID identifiers present.
+      - url: https://stsfed.login.vu.nl/FederationMetadata/2007-06/FederationMetadata.xml
+        status: 200
+        note: >-
+          116,822 bytes of signed SAML 2.0 metadata from VU's own ADFS. INSTITUTION-OPERATED,
+          and absent from the June 2026 profile.
+      - url: https://metadata.surfconext.nl/idps-metadata.xml
+        status: 200
+        note: >-
+          SURFconext national IdP feed carries exactly one vu.nl entity — VU's, DisplayName
+          "Vrije Universiteit Amsterdam", shibmd:Scope vu.nl.
+      - url: https://research.vu.nl/ws/api/openapi.yaml
+        status: 200
+        note: >-
+          1,023,951 bytes of Elsevier's Pure API v5.34.3 contract, served from VU's host. Live,
+          but VENDOR-AUTHORED; not saved under VU's slug.
+      - url: https://research.vu.nl/ws/api/524/persons
+        status: 401
+        note: Pure REST web service is API-key gated (the June review recorded 302).
+      - url: https://api.datacite.org/clients/delft.vudata
+        status: 200
+        note: DataCite repository client "VU Yoda" at portal.yoda.vu.nl, 171 DOIs minted.
+      - url: https://api.datacite.org/clients/yajd.tkscoo
+        status: 200
+        note: DataCite repository client "VU Research Portal" at research.vu.nl, 34 DOIs minted.
+      - url: https://portal.yoda.vu.nl
+        status: 200
+        note: VU Yoda RDM portal; gates at /user/gate. Tenant — SURF maintains it for VU.
+      - url: https://data.yoda.vu.nl/
+        status: 401
+        note: Yoda WebDAV data endpoint; live and credential-gated.
+      - url: https://publication.yoda.vu.nl/
+        status: 200
+        note: Yoda dataset landing pages; served an Anubis bot challenge, not content.
+      - url: https://canvas.vu.nl/api/v1/accounts
+        status: 401
+        note: Instructure Canvas REST API live at VU's subdomain. Tenant.
+      - url: https://rooster.vu.nl/api/
+        status: 401
+        note: Semestry MyTimetable JSON API live at VU's subdomain. Tenant. Closest thing to a timetable API.
+      - url: https://dataverse.nl/api/info/version
+        status: 200
+        note: HTTP 200 but an Anubis bot-challenge body, not API output. Bot-blocked, not dead.
+      - url: https://research.vu.nl/en/organisations
+        status: 403
+        note: Cloudflare challenge on the Pure portal's HTML pages, while its /ws/ endpoints stay open.
+      - url: https://vu.nl/llms.txt
+        status: 404
+        note: No llms.txt.
+      - url: https://vu.nl/.well-known/security.txt
+        status: 404
+        note: No security.txt on vu.nl or www.vu.nl.
+      - url: https://github.com/Vrije-Universiteit-Amsterdam
+        status: 200
+        note: >-
+          Official GitHub org confirmed to hold ZERO public repos via api.github.com; dropped
+          from common[] pointers as a claim with nothing behind it.
+      - url: https://github.com/ubvu
+        status: 200
+        note: University Library org, 90 public repos (was ~86 in June). The real code presence.
+      - url: https://vu.nl/en/education/more-about/teaching-and-ai
+        status: 200
+        note: Executive-Board framework for generative AI in education. AIPolicy.
+      - url: https://vu.nl/en/student/examinations/generative-ai-your-use-our-expectations
+        status: 200
+        note: >-
+          Names the tooling VU actually licenses — Microsoft Copilot (basic) to students and
+          staff since February 2024; explicitly NOT Copilot 365. AITooling.
   - date: '2026-06-03'
     rating: 2
     summary: >-
