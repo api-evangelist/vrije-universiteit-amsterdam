@@ -276,6 +276,11 @@ apis:
   humanURL: https://canvas.vu.nl/
   baseURL: https://canvas.vu.nl/api/v1
   tags:
+  - LMS
+  - Canvas
+  - Instructure
+  - Tenant Deployment
+  tags_raw:
   - Learning Management
   - Canvas
   - Instructure
