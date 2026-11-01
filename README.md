@@ -1,4 +1,4 @@
-# Vrije Universiteit Amsterdam (vrije-universiteit-amsterdam)
+# Vrije Universiteit Amsterdam
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,85 +64,119 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Vrije Universiteit Amsterdam (VU Amsterdam) is a public research university in the Netherlands, founded in 1880 and ranked #221 in the QS World University Rankings 2025. This repository catalogs the institution's public programmatic footprint as an [APIs.json](http://apisjson.org) profile for the API Evangelist network. VU operates no developer program and publishes no API contract of its own. It does operate two machine-readable protocol surfaces on its own domain — a live OAI-PMH 2.0 repository interface and a signed SAML 2.0 identity-provider metadata document in the SURFconext federation — and it is the tenant of several vendor platforms running under `vu.nl` subdomains.
+Vrije Universiteit Amsterdam (VU Amsterdam) is a public research university in the Netherlands, founded in 1880 and ranked #221 in the QS World University Rankings 2025. It operates no public developer program, no API portal, and no first-party API contract: every OpenAPI previously attributed to VU in this repository was Elsevier's Pure API v5.34.3 (contact pure-support@elsevier.com), the same product contract at least nine other universities ship, and it has been removed. What VU genuinely operates and publishes machine-readably is two protocol surfaces on its own domain — a live OAI-PMH 2.0 repository interface at research.vu.nl/ws/oai serving OpenAIRE CERIF and Dublin Core, administered by the University Library, and a signed SAML 2.0 identity-provider metadata document at stsfed.login.vu.nl published into the SURFconext national federation and onward to eduGAIN. Everything else programmable under a vu.nl subdomain is a vendor product VU is the tenant of: the Elsevier Pure REST web service, VU Yoda (Utrecht University software maintained by SURF for VU), Instructure Canvas, and Semestry MyTimetable — all credential-gated. Research data is also published to the national DataverseNL service. The University Library GitHub organisation (ubvu) is the institution's active open-source presence with 90 public repositories; the official VU GitHub organisation has none.
 
-- APIs.json: https://raw.githubusercontent.com/api-evangelist/vrije-universiteit-amsterdam/refs/heads/main/apis.yml
-- Run with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=vrije-universiteit-amsterdam-api-evangelist&utm_content=repo
+**Areas:** University · Higher Education · Education · Netherlands · Europe · Research · Research Data · Research Repository · Identity Federation · OAI-PMH · Open Access · Public Research University
 
-## Type
+## Vrije Universiteit Amsterdam on APIs.io
 
-- University (Public Research University)
-- Index
-- Consumer
-- 3rd-Party
+Everything profiled for Vrije Universiteit Amsterdam is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/vrije-universiteit-amsterdam/](https://apis.io/providers/vrije-universiteit-amsterdam/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-University, Higher Education, Education, Netherlands, Europe, Research, Research Data, Research Repository, Identity Federation, OAI-PMH, Open Access, Public Research University
+- [VU Research Portal OAI-PMH](https://apis.io/apis/vrije-universiteit-amsterdam/research-portal-oai/) — OAI-PMH 2.0 metadata harvesting interface for the Vrije Universiteit Amsterdam Repository, served from the institution's own domain and administered by the…
+- [VU Amsterdam SAML 2.0 identity provider (SURFconext / eduGAIN)](https://apis.io/apis/vrije-universiteit-amsterdam/identity-federation/) — Vrije Universiteit Amsterdam operates its own SAML 2.0 identity provider on Microsoft ADFS and publishes signed, machine-readable federation metadata for…
+- [Elsevier Pure REST web service — VU Amsterdam deployment](https://apis.io/apis/vrije-universiteit-amsterdam/pure-web-service-deployment/) — VU Amsterdam's tenancy of the Elsevier Pure research information system, reachable at research.vu.nl/ws/api and API-key gated (GET /524/persons returns HTTP…
+- [VU Yoda research data repository](https://apis.io/apis/vrije-universiteit-amsterdam/yoda/) — VU Amsterdam's research data management and publication platform, running at portal.yoda.vu.nl. Yoda is open-source iRODS-based software built by Utrecht…
+- [VU Amsterdam collection on DataverseNL](https://apis.io/apis/vrije-universiteit-amsterdam/dataverse-nl/) — Vrije Universiteit Amsterdam publishes research datasets into DataverseNL, the shared national Dataverse service, under the collection…
+- [VU Amsterdam Canvas LMS API](https://apis.io/apis/vrije-universiteit-amsterdam/canvas/) — Instructure Canvas deployed for VU Amsterdam at canvas.vu.nl. The Canvas REST API is live and credential-gated — GET /api/v1/accounts returns HTTP 401 with…
+- [VU Amsterdam timetable (MyTimetable)](https://apis.io/apis/vrije-universiteit-amsterdam/timetable/) — VU Amsterdam's class timetable at rooster.vu.nl, running Semestry MyTimetable (the vendor is named in an HTML comment in the served page). A JSON REST API…
 
-## Surfaces — and who actually operates them
+### Published properties
 
-Every surface below carries an operator. `institution` means VU runs the thing; `tenant` means VU is a customer of a platform someone else runs, under a VU subdomain. A tenancy is a real institutional fact and is recorded as one — but the contract belongs to the vendor, and is not stored here under VU's name.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-**Institution-operated**
+#### Vocabulary (1)
 
-- **VU Research Portal OAI-PMH** — `https://research.vu.nl/ws/oai` — OAI-PMH 2.0, administered by the VU University Library (`pure.ub@vu.nl`). Fully harvestable: Identify, ListMetadataFormats, ListSets and a 108KB ListRecords pull of OpenAIRE CERIF person records all return 200. Serves `oai_dc` and `oai_cerif_openaire`.
-- **VU Amsterdam SAML 2.0 identity provider** — `https://stsfed.login.vu.nl/adfs/ls/` — entityID `http://stsfed.login.vu.nl/adfs/services/trust`, signed metadata at `/FederationMetadata/2007-06/FederationMetadata.xml` (200, 116,822 bytes), carried in the SURFconext national IdP feed with `shibmd:Scope vu.nl` and republished to eduGAIN.
+The provider's domain terms, defined.
 
-**Tenant deployments (vendor contracts, recorded but not stored here)**
+- [VU Amsterdam Research (Pure) Vocabulary](https://apis.io/vocabularies/vrije-universiteit-amsterdam/vrije-universiteit-amsterdam-vocabulary/)
 
-- **Elsevier Pure REST web service** — `https://research.vu.nl/ws/api` — Pure API v5.34.3, contact `pure-support@elsevier.com`. API-key gated (401).
-- **VU Yoda** — `https://portal.yoda.vu.nl` — Utrecht University software, maintained by SURF for VU. WebDAV at `data.yoda.vu.nl` (401); DataCite client `DELFT.VUDATA`, 171 DOIs.
-- **DataverseNL** — `https://dataverse.nl/dataverse/vuamsterdam` — VU's collection on the shared national Dataverse service.
-- **Canvas LMS** — `https://canvas.vu.nl/api/v1` — Instructure Canvas, live and credential-gated (401).
-- **MyTimetable** — `https://rooster.vu.nl/api` — Semestry MyTimetable, live and credential-gated (401).
+#### Security (1)
 
-## Domain standard conformance (Kin Score `education` regime)
+Authentication, trust centre, and vulnerability disclosure.
 
-- [conformance/vrije-universiteit-amsterdam-conformance.yml](conformance/vrije-universiteit-amsterdam-conformance.yml)
-- Conformant, with live evidence: **oai-pmh**, **saml**, **datacite**.
-- Explicitly not claimed: `shibboleth` (VU runs ADFS, not Shibboleth), `orcid` (zero ORCID identifiers in VU's own CERIF output), `crossref`, `lti` (Canvas is LTI-certified by Instructure, not by VU), `scim`, `oneroster`, `ed-fi`, `caliper`, `qti`.
+- [Vrije Universiteit Amsterdam Domain Security](https://apis.io/security/vrije-universiteit-amsterdam/vrije-universiteit-amsterdam-domain-security/)
 
-## Plans
+#### Plans and pricing (1)
 
-- [plans/vrije-universiteit-amsterdam-plans-pricing.yml](plans/vrije-universiteit-amsterdam-plans-pricing.yml)
+Published plans, tiers and prices.
 
-## Rate Limits
+- [Vrije Universiteit Amsterdam Plans Pricing](https://apis.io/plans/vrije-universiteit-amsterdam/vrije-universiteit-amsterdam-plans-pricing/)
 
-- [rate-limits/vrije-universiteit-amsterdam-rate-limits.yml](rate-limits/vrije-universiteit-amsterdam-rate-limits.yml)
+#### Rate limits (1)
 
-## FinOps
+Published request limits.
 
-- [finops/vrije-universiteit-amsterdam-finops.yml](finops/vrije-universiteit-amsterdam-finops.yml)
+- [Vrije Universiteit Amsterdam Rate Limits](https://apis.io/rate-limits/vrije-universiteit-amsterdam/vrije-universiteit-amsterdam-rate-limits/)
 
-## Timestamps
+#### FinOps (1)
 
-- Created: 2026-06-03
-- Modified: 2026-08-30
+What the API costs to run, by operation.
 
-## Common Properties
+- [Vrije Universiteit Amsterdam Finops](https://apis.io/finops/vrije-universiteit-amsterdam/vrije-universiteit-amsterdam-finops/)
 
-- Website: https://vu.nl/en
-- Research repository: https://research.vu.nl/
-- Research data platform: https://portal.yoda.vu.nl
-- Course catalog: https://studiegids.vu.nl/
-- Identity federation: https://stsfed.login.vu.nl/FederationMetadata/2007-06/FederationMetadata.xml
-- Research data documentation: https://rdm.vu.nl/
-- AI policy: https://vu.nl/en/education/more-about/teaching-and-ai
-- AI tooling: https://vu.nl/en/student/examinations/generative-ai-your-use-our-expectations
-- GitHub (University Library): https://github.com/ubvu
-- LinkedIn: https://www.linkedin.com/school/vrije-universiteit-amsterdam/
-- Twitter/X: https://twitter.com/VUamsterdam
+## Where to find this API
 
-## Notes
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- **96 files were removed on 2026-08-30.** The 26 OpenAPIs this repository held under VU's name were a single Elsevier Pure contract split per tag by our own refine step, plus 70 artifacts derived from it (collections, JSON Schema, JSON Structure, examples, JSON-LD, vocabulary, Spectral rules, authentication, agentic-access, capability edges). Nothing replaced them: VU authors no API contract, and this pipeline does not generate one on an institution's behalf.
-- The June 2026 review concluded that no identity API was found. That was wrong — VU publishes signed SAML 2.0 IdP metadata, and it is one of only two genuinely first-party machine-readable surfaces the institution has.
-- The official GitHub org (`Vrije-Universiteit-Amsterdam`) resolves but holds **zero** public repositories, confirmed via api.github.com; it is not listed as a pointer. The University Library org (`ubvu`) has 90 public repos and is the real code presence.
-- No developer portal, no `llms.txt`, no `.well-known/security.txt` at any probed location.
-- `dataverse.nl` and `publication.yoda.vu.nl` answer with an Anubis bot challenge (HTTP 200, interstitial body). `research.vu.nl` HTML pages sit behind a Cloudflare challenge (403) while its `/ws/` protocol endpoints stay open. Bot-blocked is a finding about the edge, not a gap in the institution.
-- This profile is thin because a university is a federation of buyers, not a producer. It is a correct measurement, not a failed one — and a correct re-profile is expected to lower the score this repository previously earned on someone else's contract.
+- [Website](https://vu.nl/en)
+- [Documentation](https://rdm.vu.nl/)
+- [Support](https://vu.nl/en/about-vu/more-about/contact)
+- [Blog](https://vu.nl/en/news)
+- [Terms of service](https://vu.nl/en/about-vu/more-about/disclaimer)
+- [Privacy policy](https://vu.nl/en/about-vu/more-about/privacy-statement-vrije-universiteit-amsterdam)
+- [GitHub](https://github.com/ubvu)
 
-## Maintainers
+## API Evangelist rating
 
-- Kin Lane — kin@apievangelist.com
+**Kin Score 21.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 4.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 26.3 |
+
+**Agent readiness 3.1** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/vrije-universiteit-amsterdam/](https://apis.io/providers/vrije-universiteit-amsterdam/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Vrije Universiteit Amsterdam: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/vrije-universiteit-amsterdam/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
